@@ -43,12 +43,13 @@ import Slider from './components/slider';
 import Spin from './components/spin';
 import Steps from './components/steps';
 import Switch from './components/switch';
-import Table from './components/table';
+import DataGrid from './components/data-grid';
+import {Table, Column} from './components/table';
 import Tabs from './components/tabs';
 import Tag from './components/tag';
 import Time from './components/time';
 import Timeline from './components/timeline';
-import TimePicker from './components/time-picker';
+//import TimePicker from './components/time-picker';
 import Tooltip from './components/tooltip';
 import Transfer from './components/transfer';
 import Tree from './components/tree';
@@ -121,6 +122,8 @@ const components = {
     Spin,
     Step: Steps.Step,
     Steps,
+    DataGrid,
+    Column,
     Table,
     Tabs: Tabs,
     TabPane: Tabs.Pane,
@@ -128,7 +131,7 @@ const components = {
     Time,
     Timeline,
     TimelineItem: Timeline.Item,
-    TimePicker,
+    //TimePicker,
     Tooltip,
     Transfer,
     Tree,
@@ -156,10 +159,12 @@ const iview = {
 };
 
 const install = function(Vue, opts = {}) {
+
     if (install.installed) return;
     locale.use(opts.locale);
     locale.i18n(opts.i18n);
-
+    Vue.directive('poptip', Poptip.directive);
+    Vue.directive('tooltip', Tooltip.directive);
     Object.keys(iview).forEach(key => {
         Vue.component(key, iview[key]);
     });
@@ -191,5 +196,5 @@ API.lang = (code) => {
     if (code === langObject.i.locale) locale.use(langObject);
     else console.log(`The ${code} language pack is not loaded.`); // eslint-disable-line no-console
 };
-
-module.exports.default = module.exports = API;   // eslint-disable-line no-undef
+export default API;
+//module.exports.default = module.exports = API;   // eslint-disable-line no-undef

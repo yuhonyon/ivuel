@@ -10,9 +10,9 @@
     </div>
 </template>
 <script>
-    import AsyncValidator from 'async-validator';
+    import AsyncValidator from '../../utils/validator';
     import Emitter from '../../mixins/emitter';
-
+    import extend from '../../utils/extend';
     const prefixCls = 'ivu-form-item';
 
     function getPropByPath(obj, path) {
@@ -149,7 +149,19 @@
 
                 formRules = formRules ? formRules[this.prop] : [];
 
-                return [].concat(selfRules || formRules || []);
+                let rules= extend(true,[],selfRules || formRules || []);
+
+                if (rules.length) {
+                    rules.forEach(rule => {
+                      for(let i in rule){
+                        if(typeof rule[i]==='function'){
+                          rule[i]=rule[i]()
+                        }
+                      }
+
+                    });
+                }
+                return rules;
             },
             getFilteredRule (trigger) {
                 const rules = this.getRules();
@@ -180,6 +192,23 @@
                     callback(this.validateMessage);
                 });
                 this.validateDisabled = false;
+            },
+            resetValidate () {
+                this.validateState = '';
+                this.validateMessage = '';
+                let rules = this.getRules();
+                if (rules.length) {
+                    rules.every(rule => {
+                        if (rule.required) {
+                            this.isRequired = true;
+                            return false;
+                        }else if(rule.required===false){
+                            this.isRequired = false;
+                            return false;
+                        }
+                    });
+                }
+
             },
             resetField () {
                 this.validateState = '';

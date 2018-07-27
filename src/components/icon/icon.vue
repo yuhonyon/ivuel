@@ -13,6 +13,10 @@
             },
             size: [Number, String],
             color: String,
+            prefix:{
+              type:String,
+              default:prefixCls
+            },
             custom: {
                 type: String,
                 default: ''
@@ -23,7 +27,7 @@
                 return [
                     `${prefixCls}`,
                     {
-                        [`${prefixCls}-${this.type}`]: this.type !== '',
+                        [`${this.prefix}-${this.type}`]: this.type !== '',
                         [`${this.custom}`]: this.custom !== '',
                     }
                 ];

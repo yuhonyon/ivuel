@@ -60,10 +60,46 @@
             }
         },
         methods: {
-            resetFields() {
-                this.fields.forEach(field => {
-                    field.resetField();
-                });
+            resetFields(prop) {
+              if(prop){
+              if(typeof prop ==='string'){
+                prop=[prop];
+              }
+              const firstField = this.fields.filter(field =>{
+                if(prop.includes(field.prop)){
+                      field.resetField();
+                      return true;
+                    }
+                    return false;
+                })[0];
+                if (!firstField) { throw new Error('[iView warn]: must call resetField with valid prop string!'); }
+                  return;
+                }
+
+              this.fields.forEach(field => {
+                  field.resetField();
+              });
+            },
+            resetValidate(prop){
+              if(prop){
+                if(typeof prop ==='string'){
+                  prop=[prop];
+                }
+                const field = this.fields.filter(field =>{
+                  if(prop.includes(field.prop)){
+                    field.resetValidate();
+                    return true;
+                  }
+                  return false;
+                })[0];
+                if (!field) { throw new Error('[iView warn]: must call resetValidate with valid prop string!'); }
+
+
+                return;
+              }
+              this.fields.forEach(field => {
+                  field.resetValidate();
+              });
             },
             validate(callback) {
                 return new Promise(resolve => {
@@ -93,9 +129,9 @@
             }
         },
         watch: {
-            rules() {
-                this.validate();
-            }
+            // rules() {
+            //     this.validate();
+            // }
         },
         created () {
             this.$on('on-form-item-add', (field) => {

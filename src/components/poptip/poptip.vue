@@ -17,7 +17,7 @@
                 :class="popperClasses"
                 :style="styles"
                 ref="popper"
-                v-show="visible"
+                v-show="visible&&!disabled"
                 @click="handleTransferClick"
                 @mouseenter="handleMouseenter"
                 @mouseleave="handleMouseleave"
@@ -95,6 +95,10 @@
                 type: String
             },
             transfer: {
+                type: Boolean,
+                default: false
+            },
+            disabled: {
                 type: Boolean,
                 default: false
             },
@@ -234,6 +238,13 @@
             }
         },
         mounted () {
+            let reference = this.$refs.reference;
+            reference.addEventListener('click', this.handleTransferClick, false);
+            reference.addEventListener('mouseenter', this.handleMouseenter, false);
+            reference.addEventListener('mouseleave', this.handleMouseleave, false);
+            reference.addEventListener('mousedown', ()=>{this.handleFocus(false)}, false);
+            reference.addEventListener('mouseup', ()=>{this.handleBlur(false)}, false);
+            reference.addEventListener('click', this.handleClick, false);
             if (!this.confirm) {
 //                this.showTitle = this.$refs.title.innerHTML != `<div class="${prefixCls}-title-inner"></div>`;
                 this.showTitle = (this.$slots.title !== undefined) || this.title;
@@ -251,6 +262,11 @@
             }
         },
         beforeDestroy () {
+            let reference = this.$refs.reference;
+
+            reference.removeEventListener('mousedown', this.handleFocus, false);
+            reference.removeEventListener('mouseup', this.handleBlur, false);
+            reference.removeEventListener('click', this.handleClick, false);
             const $children = this.getInputChildren();
             if ($children) {
                 $children.removeEventListener('focus', this.handleFocus, false);

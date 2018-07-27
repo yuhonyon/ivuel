@@ -34,3 +34,13 @@ export const off = (function() {
         };
     }
 })();
+
+export const once = (function(el, event, fn) {
+    var listener = function() {
+        if (fn) {
+            fn.apply(this, arguments);
+        }
+        off(el, event, listener);
+    };
+    on(el, event, listener);
+})();

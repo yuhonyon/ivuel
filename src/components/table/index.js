@@ -1,2 +1,6 @@
-import Table from './table.vue';
-export default Table;
+import Column from './src/table-column';
+import Table from './src/table';
+
+
+
+export { Table, Column };

@@ -32,7 +32,15 @@
                     return [];
                 }
             },
+            collapse:{
+              type: Boolean,
+              default: false
+            },
             accordion: {
+                type: Boolean,
+                default: false
+            },
+            router: {
                 type: Boolean,
                 default: false
             },
@@ -55,6 +63,9 @@
                 return [
                     `${prefixCls}`,
                     `${prefixCls}-${theme}`,
+                    {
+                      [`${prefixCls}-collapse`]:this.collapse
+                    },
                     {
                         [`${prefixCls}-${this.mode}`]: this.mode
                     }
@@ -97,7 +108,7 @@
                         item.opened = false;
                     });
                 } else {
-                    if (this.accordion) {
+                    if (this.accordion||this.collapse) {
                         let currentSubmenu = null;
                         findComponentsDownward(this, 'Submenu').forEach(item => {
                             if (item.name === name) {
@@ -136,7 +147,25 @@
             this.$on('on-menu-item-select', (name) => {
                 this.currentActiveName = name;
                 this.$emit('on-select', name);
+                if(this.router&&this.$router){
+                  this.$router.push({
+                      path: name
+                  })
+                }
+                if(this.collapse){
+                  //console.log(this.openNames)
+                  this.openNames.splice(0, this.openNames.length);
+                  this.updateOpened();
+                }
             });
+            if(this.router&&this.$router){
+              this.currentActiveName =this.$route.path
+              this.$watch('$route',function(val,old){
+                if(val.path!==old.path){
+                  this.currentActiveName =val.path
+                }
+              })
+            }
         },
         watch: {
             openNames (names) {

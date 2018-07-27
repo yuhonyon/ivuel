@@ -12,7 +12,6 @@
     .input;
     margin: 0;
     padding: 0;
-    width: 80px;
     height: @input-height-base;
     line-height: @input-height-base;
     vertical-align: middle;
@@ -78,6 +77,29 @@
         right: 4px;
         transition: all @transition-time linear;
     }
+    &-plusminus{
+      width:@input-height-base * 2;
+      opacity: 1;
+      overflow: hidden;
+      .@{input-number-prefix-cls}{
+        &-handler{
+          float: left;
+          height: 100%;
+          width:50%;
+        }
+        &-handler-up{
+          border-right: 1px solid @border-color-base;
+
+        }
+        &-handler-down-inner,&-handler-up-inner{
+          text-align: center;
+          height: 100%;
+          width:100%;
+          right:0;
+          line-height: @input-height-base - 2px;
+        }
+      }
+    }
 
     &:hover {
         .hover();
@@ -134,6 +156,20 @@
         .@{input-number-prefix-cls}-handler-down-inner {
             bottom: 2px;
         }
+
+        .@{input-number-prefix-cls}-plusminus{
+          width:@input-height-large * 2;
+          .@{input-number-prefix-cls}-handler{
+            height:100%;
+            &-down-inner,&-up-inner{
+              line-height: @input-height-large - 2px;
+              top:0;
+              left:0;
+            }
+          }
+        }
+
+
     }
 
     &-small {
@@ -156,6 +192,17 @@
         }
         .@{input-number-prefix-cls}-handler-down-inner {
             bottom: -1px;
+        }
+        .@{input-number-prefix-cls}-plusminus{
+          width:@input-height-small * 2;
+          .@{input-number-prefix-cls}-handler{
+            height:100%;
+            &-down-inner,&-up-inner{
+              line-height: @input-height-small - 2px;
+              top:0;
+              left:0;
+            }
+          }
         }
     }
 

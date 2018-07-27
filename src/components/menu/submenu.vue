@@ -1,7 +1,8 @@
 <template>
     <li :class="classes" @mouseenter="handleMouseenter" @mouseleave="handleMouseleave">
-        <div :class="[prefixCls + '-submenu-title']" ref="reference" @click.stop="handleClick" :style="titleStyle">
-            <slot name="title"></slot>
+        <div :class="[prefixCls + '-submenu-title']" ref="reference" @click.stop="handleClick" :style="titleStyle" v-tooltip:tooltip >
+            <slot name="title" ></slot>
+            <Tooltip ref='tooltip' v-if="!!tooltip&&menu.collapse" :popper-class="popperClass"  :disabled="opened" transfer :content="tooltip" placement="right"></Tooltip>
             <Icon type="ios-arrow-down" :class="[prefixCls + '-submenu-title-icon']"></Icon>
         </div>
         <collapse-transition v-if="mode === 'vertical'">
@@ -20,6 +21,7 @@
 <script>
     import Drop from '../select/dropdown.vue';
     import Icon from '../icon/icon.vue';
+    import Tooltip from '../tooltip/';
     import CollapseTransition from '../base/collapse-transition';
     import { getStyle, findComponentUpward, findComponentsDownward } from '../../utils/assist';
     import Emitter from '../../mixins/emitter';
@@ -30,7 +32,7 @@
     export default {
         name: 'Submenu',
         mixins: [ Emitter, mixin ],
-        components: { Icon, Drop, CollapseTransition },
+        components: { Icon, Drop, CollapseTransition,Tooltip },
         props: {
             name: {
                 type: [String, Number],
@@ -39,6 +41,10 @@
             disabled: {
                 type: Boolean,
                 default: false
+            },
+            tooltip: {
+                type: String,
+                default: ""
             }
         },
         data () {
@@ -50,6 +56,9 @@
             };
         },
         computed: {
+            popperClass(){
+              return `${prefixCls}-tooltip`
+            },
             classes () {
                 return [
                     `${prefixCls}-submenu`,
@@ -63,7 +72,7 @@
                 ];
             },
             accordion () {
-                return this.menu.accordion;
+                return this.menu.accordion||this.menu.collapse;
             },
             dropStyle () {
                 let style = {};

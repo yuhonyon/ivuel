@@ -1,9 +1,9 @@
 <template>
     <div v-transfer-dom :data-transfer="transfer">
         <transition :name="transitionNames[1]">
-            <div :class="maskClasses" v-show="visible" @click="mask"></div>
+            <div :class="maskClasses" v-show="visible" @click="mask" :style="maskStyles"></div>
         </transition>
-        <div :class="wrapClasses" @click="handleWrapClick">
+        <div :class="wrapClasses" @click="handleWrapClick" :style="wrapStyles">
             <transition :name="transitionNames[0]" @after-leave="animationFinish">
                 <div :class="classes" :style="mainStyles" v-show="visible">
                     <div :class="[prefixCls + '-content']">
@@ -33,6 +33,7 @@
     import Locale from '../../mixins/locale';
     import Emitter from '../../mixins/emitter';
     import ScrollbarMixins from './mixins-scrollbar';
+    import zIndexManager from "../../utils/zIndexManager"
 
     const prefixCls = 'ivu-modal';
 
@@ -42,6 +43,10 @@
         components: { Icon, iButton },
         directives: { TransferDom },
         props: {
+            vertical:{
+              type: [Number, String],
+              default:"center"
+            },
             value: {
                 type: Boolean,
                 default: false
@@ -103,7 +108,8 @@
                 wrapShow: false,
                 showHead: true,
                 buttonLoading: false,
-                visible: this.value
+                visible: this.value,
+                zIndex:zIndexManager.zIndex
             };
         },
         computed: {
@@ -112,7 +118,8 @@
                     `${prefixCls}-wrap`,
                     {
                         [`${prefixCls}-hidden`]: !this.wrapShow,
-                        [`${this.className}`]: !!this.className
+                        [`${this.className}`]: !!this.className,
+                        [`${prefixCls}-vertical-center`]: this.vertical==='center'
                     }
                 ];
             },
@@ -121,6 +128,12 @@
             },
             classes () {
                 return `${prefixCls}`;
+            },
+            wrapStyles(){
+              return {'top':typeof this.vertical==='number'?this.vertical:0,'zIndex':this.zIndex}
+            },
+            maskStyles(){
+              return {'zIndex':this.zIndex}
             },
             mainStyles () {
                 let style = {};
@@ -223,6 +236,7 @@
                     }, 300);
                 } else {
                     if (this.timer) clearTimeout(this.timer);
+                    this.zIndex=zIndexManager.nextZIndex();
                     this.wrapShow = true;
                     if (!this.scrollable) {
                         this.addScrollEffect();

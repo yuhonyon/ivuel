@@ -1,5 +1,5 @@
 <template>
-    <div :class="[prefixCls]" @mouseenter="handleShowPopper" @mouseleave="handleClosePopper">
+    <div :class="[prefixCls]" @mouseenter="handleMouseenter" @mouseleave="handleMouseleave">
         <div :class="[prefixCls + '-rel']" ref="reference">
             <slot></slot>
         </div>
@@ -8,8 +8,8 @@
                 :class="[prefixCls + '-popper']"
                 ref="popper"
                 v-show="!disabled && (visible || always)"
-                @mouseenter="handleShowPopper"
-                @mouseleave="handleClosePopper"
+                @mouseenter="handleMouseenter"
+                @mouseleave="handleMouseleave"
                 :data-transfer="transfer"
                 v-transfer-dom>
                 <div :class="[prefixCls + '-content']">
@@ -32,6 +32,12 @@
         directives: { TransferDom },
         mixins: [Popper],
         props: {
+            trigger: {
+                validator (value) {
+                    return oneOf(value, ['click', 'focus', 'hover']);
+                },
+                default: 'hover'
+            },
             placement: {
                 validator (value) {
                     return oneOf(value, ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end', 'right', 'right-start', 'right-end']);
@@ -89,12 +95,59 @@
                         }, 100);
                     }
                 }
+            },
+            handleClick () {
+                if (this.trigger !== 'click') {
+                    return false;
+                }
+                this.visible?this.handleClosePopper():this.handleShowPopper()
+            },
+            handleFocus () {
+                if (this.trigger !== 'focus') {
+                    return false;
+                }
+                this.handleShowPopper()
+            },
+            handleBlur () {
+                if (this.trigger !== 'focus') {
+                    return false;
+                }
+                this.handleClosePopper()
+            },
+            handleMouseenter () {
+                if (this.trigger !== 'hover') {
+                    return false;
+                }
+                this.handleShowPopper()
+            },
+            handleMouseleave () {
+                if (this.trigger !== 'hover') {
+                    return false;
+                }
+                this.handleClosePopper()
             }
         },
         mounted () {
+            let reference = this.$refs.reference;
+            reference.addEventListener('mouseenter', this.handleMouseenter, false);
+            reference.addEventListener('mouseleave', this.handleMouseleave, false);
+            reference.addEventListener('mousedown', this.handleFocus, false);
+            reference.addEventListener('mouseup', this.handleBlur, false);
+            reference.addEventListener('click', this.handleClick, false);
+
             if (this.always) {
                 this.updatePopper();
             }
+        },
+        beforeDestroy () {
+            let reference = this.$refs.reference;
+
+            reference.removeEventListener('mousedown', this.handleFocus, false);
+            reference.removeEventListener('mouseup', this.handleBlur, false);
+            reference.removeEventListener('click', this.handleClick, false);
+            reference.removeEventListener('mouseenter', this.handleMouseenter, false);
+            reference.removeEventListener('mouseleave', this.handleMouseleave, false);
+
         }
     };
 </script>
