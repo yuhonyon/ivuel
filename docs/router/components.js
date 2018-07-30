@@ -110,6 +110,14 @@ export default {
         },
         {
             name:{
+                'zh':'ColorPicker',
+                'en':'ColorPicker'
+            },
+            icon:'ios-star',
+            path:'color-picker'
+        },
+        {
+            name:{
                 'zh':'InputNumber',
                 'en':'InputNumber'
             },

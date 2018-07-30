@@ -18,20 +18,15 @@ order: 1
 
 ```vue
 <template>
-    <Button>Default</Button>
-    <Button type="primary">Primary</Button>
-    <Button type="ghost">Ghost</Button>
-    <Button type="dashed">Dashed</Button>
-    <Button type="text">Text</Button>
-    <br><br>
-    <Button type="info">Info</Button>
-    <Button type="success">Success</Button>
-    <Button type="warning">Warning</Button>
-    <Button type="error">Error</Button>
+    <ColorPicker v-model="value"></ColorPicker>
 </template>
 <script>
     export default {
-
+      data(){
+        return{
+          value:"#000"
+        }
+      }
     }
 </script>
 ```

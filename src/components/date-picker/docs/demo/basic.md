@@ -18,13 +18,13 @@ order: 1
 
 ```vue
 <template>
-    <DatePicker v-model="date"></DatePicker>
+    <DatePicker v-model="date" value-format="yyyy/MM/dd"></DatePicker>
 </template>
 <script>
     export default {
       data(){
         return {
-          date:new Date()
+          date:new Date().getTime()
         }
       }
     }

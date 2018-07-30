@@ -154,7 +154,7 @@
                 if (rules.length) {
                     rules.forEach(rule => {
                       for(let i in rule){
-                        if(typeof rule[i]==='function'){
+                        if(typeof rule[i]==='function'&&i!=="validator"){
                           rule[i]=rule[i]()
                         }
                       }

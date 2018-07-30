@@ -254,6 +254,9 @@
         if (typeof format !== 'string') {
             throw new Error('Invalid format in fecha.parse');
         }
+        if(typeof dateStr==='number'){
+          return new Date(dateStr)
+        }
 
         format = fecha.masks[format] || format;
 

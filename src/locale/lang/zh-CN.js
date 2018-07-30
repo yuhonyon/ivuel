@@ -3,6 +3,10 @@ import setLang from '../lang';
 const lang = {
     i: {
         locale: 'zh-CN',
+        colorpicker: {
+            confirm: '确定',
+            clear: '清空'
+        },
         select: {
             placeholder: '请选择',
             noMatch: '无匹配数据',

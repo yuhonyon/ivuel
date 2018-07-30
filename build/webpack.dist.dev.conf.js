@@ -25,8 +25,8 @@ const webpackConfig = merge(baseWebpackConfig, {
   output: {
     path: config.dist.assetsRoot,
     publicPath: '/dist/',
-    filename: 'vueui.min.js',
-    library: 'vueui',
+    filename: 'ivuel.min.js',
+    library: 'ivuel',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
