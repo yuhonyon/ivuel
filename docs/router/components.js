@@ -25,6 +25,46 @@ export default {
             path:'button'
         },
     ],
+    layout:[
+        {
+            name:{
+                zh:'Layout',
+                en:'Layout'
+            },
+            icon:'ios-star',
+            path:'layout'
+        },
+        {
+            name:{
+                zh:'Card',
+                en:'Card'
+            },
+            icon:'ios-star',
+            path:'card'
+        },
+        {
+            name:{
+                zh:'Collapse',
+                en:'Collapse'
+            },
+            icon:'ios-star',
+            path:'collapse'
+        },{
+            name:{
+                'zh':'Modal',
+                'en':'Modal'
+            },
+            icon:'ios-star',
+            path:'modal'
+        },{
+            name:{
+                zh:'Tabs',
+                en:'Tabs'
+            },
+            icon:'ios-star',
+            path:'tabs'
+        }
+    ],
     view:[
         {
             name:{
@@ -49,15 +89,64 @@ export default {
             },
             icon:'ios-star',
             path:'poptip'
-        },
-        {
+        },{
             name:{
-                'zh':'Modal',
-                'en':'Modal'
+                'zh':'Message',
+                'en':'Message'
             },
             icon:'ios-star',
-            path:'modal'
+            path:'message'
+        },{
+            name:{
+                'zh':'Notice',
+                'en':'Notice'
+            },
+            icon:'ios-star',
+            path:'notice'
+        },{
+            name:{
+                'zh':'Progress',
+                'en':'Progress'
+            },
+            icon:'ios-star',
+            path:'progress'
+        },{
+            name:{
+                'zh':'Avatar',
+                'en':'Avatar'
+            },
+            icon:'ios-star',
+            path:'avatar'
+        },{
+            name:{
+                'zh':'Badge',
+                'en':'Badge'
+            },
+            icon:'ios-star',
+            path:'badge'
+        },{
+            name:{
+                'zh':'Tag',
+                'en':'Tag'
+            },
+            icon:'ios-star',
+            path:'tag'
+        },{
+            name:{
+                'zh':'Carousel',
+                'en':'Carousel'
+            },
+            icon:'ios-star',
+            path:'carousel'
+        },{
+            name:{
+                'zh':'Tree',
+                'en':'Tree'
+            },
+            icon:'ios-star',
+            path:'tree'
         },
+
     ],
     form:[
         {
@@ -131,17 +220,74 @@ export default {
             },
             icon:'ios-star',
             path:'form'
+        },{
+            name:{
+                'zh':'AutoComplete',
+                'en':'AutoComplete'
+            },
+            icon:'ios-star',
+            path:'auto-complete'
+        },{
+            name:{
+                'zh':'Slider',
+                'en':'Slider'
+            },
+            icon:'ios-star',
+            path:'slider'
+        },{
+            name:{
+                'zh':'Cascader',
+                'en':'Cascader'
+            },
+            icon:'ios-star',
+            path:'cascader'
+        },{
+            name:{
+                'zh':'Transfer',
+                'en':'Transfer'
+            },
+            icon:'ios-star',
+            path:'transfer'
+        },{
+            name:{
+                'zh':'Rate',
+                'en':'Rate'
+            },
+            icon:'ios-star',
+            path:'rate'
+        },{
+            name:{
+                'zh':'Upload',
+                'en':'Upload'
+            },
+            icon:'ios-star',
+            path:'upload'
         },
 
     ],
     navigation:[
         {
             name:{
-                'zh':'Tabs',
-                'en':'Tabs'
+                'zh':'Dropdown',
+                'en':'Dropdown'
             },
             icon:'ios-star',
-            path:'tabs'
+            path:'dropdown'
+        },
+        {
+            name:{
+                'zh':'Steps',
+                'en':'Steps'
+            },
+            icon:'ios-star',
+            path:'steps'
+        },{
+            name:{
+                'zh':'Breadcrumb',
+                'en':'Breadcrumb'
+            },
+            icon:'ios-star',
+            path:'breadcrumb'
         },
         {
             name:{
@@ -158,6 +304,13 @@ export default {
             },
             icon:'ios-star',
             path:'page'
+        },{
+            name:{
+                'zh':'LoadingBar',
+                'en':'LoadingBar'
+            },
+            icon:'ios-star',
+            path:'loading-bar'
         },
     ],
     other:[

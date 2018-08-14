@@ -38,6 +38,12 @@ export default new Router({
                     },{
                       path:"/doc/start",
                       component: ()=> import(`#/views/markdown/Start.md`)
+                    },{
+                      path:"/doc/theme",
+                      component: ()=> import(`#/views/markdown/Theme.md`)
+                    },{
+                      path:"/doc/i18n",
+                      component: ()=> import(`#/views/markdown/I18n.md`)
                     }]
                 },
                 {

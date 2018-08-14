@@ -4,8 +4,8 @@
       <h3>开发指南</h3>
       <MenuItem name="/doc/install"><Icon type="ios-star"></Icon><span>安装</span></MenuItem>
       <MenuItem name="/doc/start"><Icon type="ios-star"></Icon><span>快速上手</span></MenuItem>
-      <MenuItem name="3"><Icon type="ios-star"></Icon><span>国际化</span></MenuItem>
-      <MenuItem name="4"><Icon type="ios-star"></Icon><span>自定义主题</span></MenuItem>
+      <MenuItem name="/doc/i18n"><Icon type="ios-star"></Icon><span>国际化</span></MenuItem>
+      <MenuItem name="/doc/theme"><Icon type="ios-star"></Icon><span>自定义主题</span></MenuItem>
       <h3>组件</h3>
       <MenuGroup v-for="(group,index) in components" :key="index" title="Basic">
           <MenuItem v-for="item in group" :key="item.path" :tooltip="item.name.zh" :name="`/components/${item.path}`"><Icon :type="item.icon"></Icon><span>{{item.name.zh}}</span></MenuItem>

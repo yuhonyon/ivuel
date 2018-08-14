@@ -3,8 +3,8 @@ title:
   zh-CN: 安装
   en-US: install
 desc:
-  zh-CN:
-  en-US:
+  zh-CN: 安装方法
+  en-US: 安装方法
 ---
 
 

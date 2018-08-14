@@ -1,6 +1,6 @@
 ---
 title:
-  zh-CN: icon&形状
+  zh-CN: 尺寸
   en-US: icon&shapes
 desc:
   zh-CN: 设置按钮形状和图标。
@@ -27,15 +27,9 @@ Set the shape to circle to use a circle button.
 
 ```vue
 <template>
-    <Button type="primary" shape="circle" icon="ios-search"></Button>
-    <Button type="primary" icon="ios-search">Search</Button>
-    <Button type="primary" shape="circle" icon="ios-search">Search</Button>
-    <Button type="primary" shape="circle">Circle</Button>
-    <br><br>
-    <Button type="ghost" shape="circle" icon="ios-search"></Button>
-    <Button type="ghost" icon="ios-search">Search</Button>
-    <Button type="ghost" shape="circle" icon="ios-search">Search</Button>
-    <Button type="ghost" shape="circle">Circle</Button>
+    <Switch size="large" />
+    <Switch />
+    <Switch size="small" />
 </template>
 <script>
     export default {

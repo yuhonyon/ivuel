@@ -1,24 +1,22 @@
 ---
 title:
-  zh-CN: Button 按钮
-  en-US: Button
+  zh-CN: Icon 图标
+  en-US: Icon Font
 desc:
-  zh-CN: 基础组件，触发业务逻辑时使用。
+  zh-CN: 图标使用开源项目 ionicons 3.x 版本。。
   en-US: Basic component that is used to trigger bussiness logic.
 ---
 
 
 # zh-CN
 
-## API
-| 属性        | 说明    |  类型  | 默认值|
-| --------   | -----:   | :----: | :----: |
-| type        | 按钮类型，可选值为primary、ghost、dashed、text、info、success、warning、error或者不设置  |   String   | -|
+## 使用方法
+使用`<Icon />`组件，指定图标对应的type属性，示例代码：
+```html
+<Icon type="ios-checkmark" />
+```
+渲染后为：
 
-
-# en-US
-
-## API
-| Attribute        | Explanation    |  Type  | Default|
-| --------   | -----:   | :----: | :----: |
-| type        | Button type, options include primary、ghost、dashed、text、info、success、warning、error, optional      |   String   | -|
+````html
+<i class="ivu-icon ivu-icon-ios-checkmark"></i>
+````

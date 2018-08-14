@@ -1,11 +1,10 @@
 ---
 title:
-  zh-CN: 按钮尺寸
+  zh-CN: 基础用法
   en-US: Button Size
 desc:
-  zh-CN: 按钮有六种类型：主按钮、次按钮、虚线按钮、危险按钮。
+  zh-CN: 用法。
   en-US: Button
-author: yufangyang
 order: 1
 ---
 
@@ -18,20 +17,10 @@ order: 1
 
 ```vue
 <template>
-    <Button>Default</Button>
-    <Button type="primary">Primary</Button>
-    <Button type="ghost">Ghost</Button>
-    <Button type="dashed">Dashed</Button>
-    <Button type="text">Text</Button>
-    <br><br>
-    <Button type="info">Info</Button>
-    <Button type="success">Success</Button>
-    <Button type="warning">Warning</Button>
-    <Button type="error">Error</Button>
+    <div>
+        <Icon type="ios-add-circle" />
+        <Icon type="md-alert" />
+        <Icon type="md-albums" />
+    </div>
 </template>
-<script>
-    export default {
-
-    }
-</script>
 ```

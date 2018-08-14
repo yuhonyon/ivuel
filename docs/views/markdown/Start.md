@@ -78,6 +78,57 @@ Vue.prototype.$Spin = Spin;
 
 ### 特别提醒
 * 前一种按需引用仍然需要导入样式，即在 main.js 或根组件执行 import 'ivuel/dist/styles/ivuel.css';
-* 按需引进样式的话,配置皮肤方法参考****
+* 按需引进样式的话,通过`less-loader`的`modifyVars`配置皮肤
+  ```json
+  //package.json
+  {
+    "name": "vue-project",
+    "version": "1.0.0",
+    ...
+    "theme":{//此处修改样式变量
+      "@primary-color":"red"
+    }
+  }
 
-##  使用ivuel-loader
+  ```
+  ```js
+    //vue-cli /build/utils.js
+    const packageConfig = require('../package.json')
+    return {
+      css : generateLoaders(),
+      postcss : generateLoaders(),
+      less : generateLoaders('less',{"modifyVars":packageConfig.theme}),//修改此行
+      sass : generateLoaders('sass', { indentedSyntax: true }),
+      scss : generateLoaders('sass'),
+      stylus : generateLoaders('stylus'),
+      styl : generateLoaders('stylus')
+    }
+```
+
+## 配置`ivuel-loader`
+### 下载
+```bash
+npm i ivuel-loader -D
+```
+### 配置
+```
+module: {
+    rules: [
+        {
+            test: /\.vue$/,
+            use: [
+                {
+                    loader: 'vue-loader',
+                    options: {}
+                },
+                {
+                    loader: 'ivuel-loader',
+                    options: {
+                        prefix: false
+                    }
+                }
+            ]
+        }
+    ]
+}
+```
