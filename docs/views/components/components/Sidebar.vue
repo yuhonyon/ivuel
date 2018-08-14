@@ -2,8 +2,8 @@
   <div class="doc-components-sidebar">
     <Menu active-name="1" style="width:100%;" router >
       <h3>开发指南</h3>
-      <MenuItem name="1"><Icon type="ios-star"></Icon><span>安装</span></MenuItem>
-      <MenuItem name="2"><Icon type="ios-star"></Icon><span>快速上手</span></MenuItem>
+      <MenuItem name="/doc/install"><Icon type="ios-star"></Icon><span>安装</span></MenuItem>
+      <MenuItem name="/doc/start"><Icon type="ios-star"></Icon><span>快速上手</span></MenuItem>
       <MenuItem name="3"><Icon type="ios-star"></Icon><span>国际化</span></MenuItem>
       <MenuItem name="4"><Icon type="ios-star"></Icon><span>自定义主题</span></MenuItem>
       <h3>组件</h3>

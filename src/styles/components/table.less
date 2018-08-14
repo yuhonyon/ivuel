@@ -1,3 +1,4 @@
+@import "../common";
 @table-prefix-cls: "el-table";
 .ivu-tabel-tooltip{
   .ivu-tooltip-inner{
@@ -125,6 +126,16 @@
   th div {
     -webkit-box-sizing: border-box;
     display: inline-block;
+  }
+  &--align-center{
+    td,th{
+      text-align: center;
+    }
+  }
+  &--header-align-center{
+    th{
+      text-align: center;
+    }
   }
 
   td.is-center,

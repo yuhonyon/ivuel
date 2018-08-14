@@ -33,7 +33,7 @@
     import Locale from '../../mixins/locale';
     import Emitter from '../../mixins/emitter';
     import ScrollbarMixins from './mixins-scrollbar';
-    import zIndexManager from "../../utils/zIndexManager"
+    import PopupManager from '../../utils/popup/popup-manager';
 
     const prefixCls = 'ivu-modal';
 
@@ -109,7 +109,7 @@
                 showHead: true,
                 buttonLoading: false,
                 visible: this.value,
-                zIndex:zIndexManager.zIndex
+                zIndex:PopupManager.zIndex
             };
         },
         computed: {
@@ -236,7 +236,7 @@
                     }, 300);
                 } else {
                     if (this.timer) clearTimeout(this.timer);
-                    this.zIndex=zIndexManager.nextZIndex();
+                    this.zIndex=PopupManager.nextZIndex();
                     this.wrapShow = true;
                     if (!this.scrollable) {
                         this.addScrollEffect();

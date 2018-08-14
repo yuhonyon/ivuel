@@ -30,6 +30,17 @@ export default new Router({
                     children: componentsRoute
                 },
                 {
+                    path: '/doc',
+                    component: ComponentsLayout,
+                    children: [{
+                      path:"/doc/install",
+                      component: ()=> import(`#/views/markdown/Install.md`)
+                    },{
+                      path:"/doc/start",
+                      component: ()=> import(`#/views/markdown/Start.md`)
+                    }]
+                },
+                {
                     path: '/record',
                     component: ()=> import(`#/views/markdown/record.md`)
                 },

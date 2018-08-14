@@ -139,7 +139,7 @@ const components = {
     Divider
 };
 
-const iview = {
+const ivuel = {
     ...components,
     iButton: Button,
     iCircle: Circle,
@@ -165,8 +165,8 @@ const install = function(Vue, opts = {}) {
     locale.i18n(opts.i18n);
     Vue.directive('poptip', Poptip.directive);
     Vue.directive('tooltip', Tooltip.directive);
-    Object.keys(iview).forEach(key => {
-        Vue.component(key, iview[key]);
+    Object.keys(ivuel).forEach(key => {
+        Vue.component(key, ivuel[key]);
     });
 
     Vue.prototype.$Loading = LoadingBar;
@@ -192,7 +192,7 @@ const API = {
 };
 
 API.lang = (code) => {
-    const langObject = window['iview/locale'].default;
+    const langObject = window['ivuel/locale'].default;
     if (code === langObject.i.locale) locale.use(langObject);
     else console.log(`The ${code} language pack is not loaded.`); // eslint-disable-line no-console
 };

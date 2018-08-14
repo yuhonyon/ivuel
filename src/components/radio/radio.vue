@@ -102,7 +102,7 @@
                 if (this.name && this.name !== this.parent.name) {
                     /* eslint-disable no-console */
                     if (console.warn) {
-                        console.warn('[iview] Name does not match Radio Group name.');
+                        console.warn('[ivuel] Name does not match Radio Group name.');
                     }
                     /* eslint-enable no-console */
                 } else {

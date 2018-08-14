@@ -25,7 +25,7 @@
         computed: {
             classes () {
                 return [
-                    `${prefixCls}`,
+                    `${this.prefix}`,
                     {
                         [`${this.prefix}-${this.type}`]: this.type !== '',
                         [`${this.custom}`]: this.custom !== '',

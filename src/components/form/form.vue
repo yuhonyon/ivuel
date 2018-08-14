@@ -72,7 +72,7 @@
                     }
                     return false;
                 })[0];
-                if (!firstField) { throw new Error('[iView warn]: must call resetField with valid prop string!'); }
+                if (!firstField) { throw new Error('[ivuel warn]: must call resetField with valid prop string!'); }
                   return;
                 }
 
@@ -92,7 +92,7 @@
                   }
                   return false;
                 })[0];
-                if (!field) { throw new Error('[iView warn]: must call resetValidate with valid prop string!'); }
+                if (!field) { throw new Error('[ivuel warn]: must call resetValidate with valid prop string!'); }
 
 
                 return;
@@ -123,7 +123,7 @@
             },
             validateField(prop, cb) {
                 const field = this.fields.filter(field => field.prop === prop)[0];
-                if (!field) { throw new Error('[iView warn]: must call validateField with valid prop string!'); }
+                if (!field) { throw new Error('[ivuel warn]: must call validateField with valid prop string!'); }
 
                 field.validate('', cb);
             }
