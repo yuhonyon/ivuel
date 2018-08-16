@@ -1,16 +1,16 @@
 <template>
-  <transition name="el-zoom-in-top" @after-leave="doDestroy">
+  <transition name="ivu-zoom-in-top" @after-leave="doDestroy">
     <div
-      class="el-color-dropdown"
+      class="ivu-color-dropdown"
       v-show="showPopper">
-      <div class="el-color-dropdown__main-wrapper">
+      <div class="ivu-color-dropdown__main-wrapper">
         <hue-slider ref="hue" :color="color" vertical style="float: right;"></hue-slider>
         <sv-panel ref="sl" :color="color"></sv-panel>
       </div>
       <alpha-slider v-if="showAlpha" ref="alpha" :color="color"></alpha-slider>
       <predefine v-if="predefine" :color="color" :colors="predefine"></predefine>
-      <div class="el-color-dropdown__btns">
-        <span class="el-color-dropdown__value">
+      <div class="ivu-color-dropdown__btns">
+        <span class="ivu-color-dropdown__value">
           <i-input
             v-model="customInput"
             @on-keyup.native.enter="handleConfirm"
@@ -21,14 +21,14 @@
         <i-button
           size="small"
           type="text"
-          class="el-color-dropdown__link-btn"
+          class="ivu-color-dropdown__link-btn"
           @click="$emit('clear')">
           {{ t('i.colorpicker.clear') }}
         </i-button>
         <i-button
           plain
           size="small"
-          class="el-color-dropdown__btn"
+          class="ivu-color-dropdown__btn"
           @click="confirmValue">
           {{ t('i.colorpicker.confirm') }}
         </i-button>
@@ -48,7 +48,7 @@
   import IButton from '../../../button';
 
   export default {
-    name: 'el-color-picker-dropdown',
+    name: 'ivu-color-picker-dropdown',
 
     mixins: [Popper, Locale],
 
