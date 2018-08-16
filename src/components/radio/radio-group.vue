@@ -35,6 +35,10 @@
                 type: Boolean,
                 default: false
             },
+            disabled: {
+                type: Boolean,
+                default: false
+            },
             name: {
                 type: String,
                 default: getUuid
@@ -67,6 +71,7 @@
                 this.childrens = findComponentsDownward(this, 'Radio');
                 if (this.childrens) {
                     this.childrens.forEach(child => {
+                        child.groupDisabled=this.disabled;
                         child.currentValue = this.currentValue === child.label;
                         child.group = true;
                     });

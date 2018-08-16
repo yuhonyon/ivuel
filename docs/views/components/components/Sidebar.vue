@@ -1,6 +1,6 @@
 <template>
   <div class="doc-components-sidebar">
-    <Menu active-name="1" style="width:100%;" router >
+    <Menu active-name="1" style="width:100%;" router @on-select="handleSelect" >
       <h3>开发指南</h3>
       <MenuItem name="/doc/install"><Icon type="ios-star"></Icon><span>安装</span></MenuItem>
       <MenuItem name="/doc/start"><Icon type="ios-star"></Icon><span>快速上手</span></MenuItem>
@@ -23,6 +23,11 @@
             return {
                 components: components
             }
+        },
+        methods:{
+          handleSelect(){
+            window.scrollTo(0,0)
+          }
         }
     }
 </script>

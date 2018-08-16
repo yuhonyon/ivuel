@@ -19,6 +19,10 @@
                     return [];
                 }
             },
+            disabled: {
+                type: Boolean,
+                default: false
+            },
             size: {
                 validator (value) {
                     return oneOf(value, ['small', 'large', 'default']);
@@ -51,7 +55,7 @@
                     const { value } = this;
                     this.childrens.forEach(child => {
                         child.model = value;
-
+                        child.groupDisabled=this.disabled;
                         if (update) {
                             child.currentValue = value.indexOf(child.label) >= 0;
                             child.group = true;

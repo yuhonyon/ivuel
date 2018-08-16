@@ -59,7 +59,8 @@
                 groupName: this.name,
                 parent: findComponentUpward(this, 'RadioGroup'),
                 focusWrapper: false,
-                focusInner: false
+                focusInner: false,
+                groupDisabled:false
             };
         },
         computed: {
@@ -69,7 +70,7 @@
                     {
                         [`${prefixCls}-group-item`]: this.group,
                         [`${prefixCls}-wrapper-checked`]: this.currentValue,
-                        [`${prefixCls}-wrapper-disabled`]: this.disabled,
+                        [`${prefixCls}-wrapper-disabled`]: this.disabled||this.groupDisabled,
                         [`${prefixCls}-${this.size}`]: !!this.size,
                         [`${prefixCls}-focus`]: this.focusWrapper
                     }
@@ -80,7 +81,7 @@
                     `${prefixCls}`,
                     {
                         [`${prefixCls}-checked`]: this.currentValue,
-                        [`${prefixCls}-disabled`]: this.disabled
+                        [`${prefixCls}-disabled`]: this.disabled||this.groupDisabled
                     }
                 ];
             },
@@ -106,7 +107,7 @@
                     }
                     /* eslint-enable no-console */
                 } else {
-                    this.groupName = this.parent.name; 
+                    this.groupName = this.parent.name;
                 }
             }
 
@@ -118,7 +119,7 @@
         },
         methods: {
             change (event) {
-                if (this.disabled) {
+                if (this.disabled||this.groupDisabled) {
                     return false;
                 }
 

@@ -13,5 +13,5 @@ desc:
 ## NPM 安装
 推荐使用 npm 来安装
 ```bash
-$ npm install iview --save
+$ npm install ivuel --save
 ```

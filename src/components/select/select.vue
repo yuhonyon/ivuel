@@ -225,7 +225,7 @@
             // set the initial values if there are any
             if (!this.remote && this.selectOptions.length > 0){
                 this.values = this.getInitialValue().map(value => {
-                    if (typeof value !== 'number' && !value&&value!=="") return null;
+                    if (typeof value !== 'number' &&typeof value !== 'boolean' && !value&&value!=="") return null;
                     return this.getOptionData(value);
                 }).filter(Boolean);
             }
@@ -425,13 +425,13 @@
             getInitialValue(){
                 const {multiple, remote, value} = this;
                 let initialValue = Array.isArray(value) ? value : [value];
-                if (!multiple && (typeof initialValue[0] === 'undefined' || (String(initialValue[0]).trim() !== ''&&!Number.isFinite(initialValue[0])))) initialValue = [];
+                if (!multiple && (typeof initialValue[0] === 'undefined' || (typeof initialValue[0] !== 'boolean'&&String(initialValue[0]).trim() !== ''&&!Number.isFinite(initialValue[0])))) initialValue = [];
                 if (remote && !multiple && value&&value!=='') {
                     const data = this.getOptionData(value);
                     this.query = data ? data.label : String(value);
                 }
                 return initialValue.filter((item) => {
-                    return Boolean(item) || item === 0||item==='';
+                    return Boolean(item) || item === 0||item===''||item===false;
                 });
             },
             processOption(option, values, isFocused){

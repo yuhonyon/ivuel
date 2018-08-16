@@ -1,6 +1,6 @@
 {
   "name": "ivuel",
-  "version": "1.2.3",
+  "version": "1.2.5",
   "description": "A Vue.js project",
   "author": "yufangyang <975057282@qq.com>",
   "main":"dist/ivuel.min.js",
@@ -69,7 +69,7 @@
     "gulp-sourcemaps": "^2.6.4",
     "highlight.js": "^9.12.0",
     "html-webpack-plugin": "^2.30.1",
-    "ivue-doc-loader": "^2.1.4",
+    "ivue-doc-loader": "^2.1.5",
     "jest": "^22.0.4",
     "jest-serializer-vue": "^0.3.0",
     "less": "^2.7.3",

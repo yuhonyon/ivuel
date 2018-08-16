@@ -29,7 +29,7 @@ order: 1
             return {
                 cityList: [
                     {
-                        value: 'New York',
+                        value: true,
                         label: 'New York1'
                     },
                     {
@@ -53,7 +53,7 @@ order: 1
                         label: 'Canberra1'
                     }
                 ],
-                model1: ''
+                model1: true
             }
         },
         methods: {

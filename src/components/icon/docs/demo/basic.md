@@ -18,9 +18,8 @@ order: 1
 ```vue
 <template>
     <div>
-        <Icon type="ios-add-circle" />
-        <Icon type="md-alert" />
-        <Icon type="md-albums" />
+        <Icon type="ionic" size="24"></Icon>
+        <Icon type="archive"></Icon>
     </div>
 </template>
 ```
