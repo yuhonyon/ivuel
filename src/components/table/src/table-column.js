@@ -14,7 +14,7 @@ const defaults = {
     minWidth: 48,
     realWidth: 48,
     order: '',
-    className: 'el-table-column--selection'
+    className: 'ivu-table-column--selection'
   },
   expand: {
     width: 48,
@@ -70,14 +70,14 @@ const forced = {
     },
     renderCell: function(h, { row, store }, proxy) {
       const expanded = store.states.expandRows.indexOf(row) > -1;
-      return <div class={ 'el-table__expand-icon ' + (expanded ? 'el-table__expand-icon--expanded' : '') }
+      return <div class={ 'ivu-table__expand-icon ' + (expanded ? 'ivu-table__expand-icon--expanded' : '') }
                   on-click={ () => proxy.handleExpandClick(row) }>
         <i class='ivu-icon ivu-icon-ios-arrow-right'></i>
       </div>;
     },
     sortable: false,
     resizable: false,
-    className: 'el-table__expand-column'
+    className: 'ivu-table__expand-column'
   }
 };
 
@@ -285,7 +285,7 @@ export default {
 
       let cell=renderCell(h, data);
       return _self.showOverflowTooltip || _self.showTooltipWhenOverflow
-        ?<Tooltip transfer popper-class="ivu-tabel-tooltip">
+        ?<Tooltip transfer popper-class="ivu-tabivu-tooltip">
           <div slot="content" style={'max-width:' + (data.column.realWidth || data.column.width) + 'px'}>{ cell }</div>
           { cell }
         </Tooltip>

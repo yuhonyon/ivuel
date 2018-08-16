@@ -35,7 +35,7 @@ export default {
 
     return (
       <table
-        class="el-table__footer"
+        class="ivu-table__footer"
         cellspacing="0"
         cellpadding="0"
         border="0">

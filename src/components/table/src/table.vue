@@ -1,19 +1,19 @@
 <template>
-  <div class="el-table"
+  <div class="ivu-table"
     :class="[{
-      'el-table--fit': fit,
-      'el-table--striped': stripe,
-      'el-table--border': border || isGroup,
-      'el-table--hidden': isHidden,
-      'el-table--group': isGroup,
-      'el-table--fluid-height': maxHeight,
-      'el-table--enable-row-hover': !store.states.isComplex,
-      'el-table--enable-row-transition': (store.states.data || []).length !== 0 && (store.states.data || []).length < 100
-    }, tableSize ? `el-table--${ tableSize }` : '',align ? `el-table--align-${align}`:'',
-    headerAlign ? `el-table--header-align-${headerAlign}`:'']"
+      'ivu-table--fit': fit,
+      'ivu-table--striped': stripe,
+      'ivu-table--border': border || isGroup,
+      'ivu-table--hidden': isHidden,
+      'ivu-table--group': isGroup,
+      'ivu-table--fluid-height': maxHeight,
+      'ivu-table--enable-row-hover': !store.states.isComplex,
+      'ivu-table--enable-row-transition': (store.states.data || []).length !== 0 && (store.states.data || []).length < 100
+    }, tableSize ? `ivu-table--${ tableSize }` : '',align ? `ivu-table--align-${align}`:'',
+    headerAlign ? `ivu-table--header-align-${headerAlign}`:'']"
     @mouseleave="handleMouseLeave($event)">
     <div class="hidden-columns" ref="hiddenColumns"><slot></slot></div>
-    <div class="el-table__header-wrapper" ref="headerWrapper" v-if="showHeader">
+    <div class="ivu-table__header-wrapper" ref="headerWrapper" v-if="showHeader">
       <table-header
         ref="tableHeader"
         :store="store"
@@ -24,7 +24,7 @@
       </table-header>
     </div>
     <div
-      class="el-table__body-wrapper"
+      class="ivu-table__body-wrapper"
       ref="bodyWrapper"
       :class="[`is-scroll-${scrollPosition}`]"
       :style="[bodyHeight]">
@@ -38,14 +38,14 @@
         :highlight="highlightCurrentRow"
         :style="{ width: bodyWidth }">
       </table-body>
-      <div :style="{ width: bodyWidth }" class="el-table__empty-block" v-if="!data || data.length === 0">
-        <span class="el-table__empty-text"><slot name="empty">{{ emptyText || t('i.table.emptyText') }}</slot></span>
+      <div :style="{ width: bodyWidth }" class="ivu-table__empty-block" v-if="!data || data.length === 0">
+        <span class="ivu-table__empty-text"><slot name="empty">{{ emptyText || t('i.table.emptyText') }}</slot></span>
       </div>
-      <div class="el-table__append-wrapper" ref="appendWrapper" v-if="$slots.append">
+      <div class="ivu-table__append-wrapper" ref="appendWrapper" v-if="$slots.append">
         <slot name="append"></slot>
       </div>
     </div>
-    <div class="el-table__footer-wrapper" ref="footerWrapper" v-if="showSummary" v-show="data && data.length > 0">
+    <div class="ivu-table__footer-wrapper" ref="footerWrapper" v-if="showSummary" v-show="data && data.length > 0">
       <table-footer
         :store="store"
         :layout="layout"
@@ -56,13 +56,13 @@
         :style="{ width: layout.bodyWidth ? layout.bodyWidth + 'px' : '' }">
       </table-footer>
     </div>
-    <div class="el-table__fixed" ref="fixedWrapper"
+    <div class="ivu-table__fixed" ref="fixedWrapper"
       v-if="fixedColumns.length > 0"
       :style="[
         { width: layout.fixedWidth ? layout.fixedWidth + 'px' : '' },
         fixedHeight
       ]">
-      <div class="el-table__fixed-header-wrapper" ref="fixedHeaderWrapper" v-if="showHeader">
+      <div class="ivu-table__fixed-header-wrapper" ref="fixedHeaderWrapper" v-if="showHeader">
         <table-header
           ref="fixedTableHeader"
           fixed="left"
@@ -72,7 +72,7 @@
           :style="{ width: layout.fixedWidth ? layout.fixedWidth + 'px' : '' }"></table-header>
       </div>
       <div
-        class="el-table__fixed-body-wrapper"
+        class="ivu-table__fixed-body-wrapper"
         ref="fixedBodyWrapper"
         :style="[
           { top: layout.headerHeight + 'px' },
@@ -88,9 +88,9 @@
           :row-style="rowStyle"
           :style="{ width: layout.fixedWidth ? layout.fixedWidth + 'px' : '' }">
         </table-body>
-        <div class="el-table__append-gutter" :style="{ height: layout.appendHeight + 'px' }" v-if="$slots.append"></div>
+        <div class="ivu-table__append-gutter" :style="{ height: layout.appendHeight + 'px' }" v-if="$slots.append"></div>
       </div>
-      <div class="el-table__fixed-footer-wrapper" ref="fixedFooterWrapper" v-if="showSummary" v-show="data && data.length > 0">
+      <div class="ivu-table__fixed-footer-wrapper" ref="fixedFooterWrapper" v-if="showSummary" v-show="data && data.length > 0">
         <table-footer
           fixed="left"
           :border="border"
@@ -101,14 +101,14 @@
           :style="{ width: layout.fixedWidth ? layout.fixedWidth + 'px' : '' }"></table-footer>
       </div>
     </div>
-    <div class="el-table__fixed-right" ref="rightFixedWrapper"
+    <div class="ivu-table__fixed-right" ref="rightFixedWrapper"
       v-if="rightFixedColumns.length > 0"
       :style="[
         { width: layout.rightFixedWidth ? layout.rightFixedWidth + 'px' : '' },
         { right: layout.scrollY ? (border ? layout.gutterWidth : (layout.gutterWidth || 0)) + 'px' : '' },
         fixedHeight
       ]">
-      <div class="el-table__fixed-header-wrapper" ref="rightFixedHeaderWrapper" v-if="showHeader">
+      <div class="ivu-table__fixed-header-wrapper" ref="rightFixedHeaderWrapper" v-if="showHeader">
         <table-header
           ref="rightFixedTableHeader"
           fixed="right"
@@ -117,7 +117,7 @@
           :layout="layout"
           :style="{ width: layout.rightFixedWidth ? layout.rightFixedWidth + 'px' : '' }"></table-header>
       </div>
-      <div class="el-table__fixed-body-wrapper" ref="rightFixedBodyWrapper"
+      <div class="ivu-table__fixed-body-wrapper" ref="rightFixedBodyWrapper"
         :style="[
           { top: layout.headerHeight + 'px' },
           fixedBodyHeight
@@ -133,7 +133,7 @@
           :style="{ width: layout.rightFixedWidth ? layout.rightFixedWidth + 'px' : '' }">
         </table-body>
       </div>
-      <div class="el-table__fixed-footer-wrapper" ref="rightFixedFooterWrapper" v-if="showSummary" v-show="data && data.length > 0">
+      <div class="ivu-table__fixed-footer-wrapper" ref="rightFixedFooterWrapper" v-if="showSummary" v-show="data && data.length > 0">
         <table-footer
           fixed="right"
           :border="border"
@@ -144,10 +144,10 @@
           :style="{ width: layout.rightFixedWidth ? layout.rightFixedWidth + 'px' : '' }"></table-footer>
       </div>
     </div>
-    <div class="el-table__fixed-right-patch"
+    <div class="ivu-table__fixed-right-patch"
       v-if="rightFixedColumns.length > 0"
       :style="{ width: layout.scrollY ? layout.gutterWidth + 'px' : '0', height: layout.headerHeight + 'px' }"></div>
-    <div class="el-table__column-resize-proxy" ref="resizeProxy" v-show="resizeProxyVisible"></div>
+    <div class="ivu-table__column-resize-proxy" ref="resizeProxy" v-show="resizeProxyVisible"></div>
   </div>
 </template>
 
@@ -372,7 +372,7 @@
     },
 
     created() {
-      this.tableId = 'el-table_' + tableIdSeed + '_';
+      this.tableId = 'ivu-table_' + tableIdSeed + '_';
       this.debouncedLayout = debounce(50, () => this.doLayout());
     },
 

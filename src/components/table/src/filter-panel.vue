@@ -1,27 +1,27 @@
 <template>
-  <transition name="el-zoom-in-top">
-    <div class="el-table-filter" v-if="multiple" v-show="showPopper">
-      <div class="el-table-filter__content">
-        <CheckboxGroup class="el-table-filter__checkbox-group" v-model="filteredValue">
+  <transition name="ivu-zoom-in-top">
+    <div class="ivu-table-filter" v-if="multiple" v-show="showPopper">
+      <div class="ivu-table-filter__content">
+        <CheckboxGroup class="ivu-table-filter__checkbox-group" v-model="filteredValue">
           <Checkbox
             v-for="filter in filters"
             :key="filter.value"
             :label="filter.value">{{ filter.text }}</Checkbox>
         </CheckboxGroup>
       </div>
-      <div class="el-table-filter__bottom">
+      <div class="ivu-table-filter__bottom">
         <button @click="handleConfirm"
           :class="{ 'is-disabled': filteredValue.length === 0 }"
           :disabled="filteredValue.length === 0">{{ t('i.table.confirmFilter') }}</button>
         <button @click="handleReset">{{ t('i.table.resetFilter') }}</button>
       </div>
     </div>
-    <div class="el-table-filter" v-else v-show="showPopper">
-      <ul class="el-table-filter__list">
-        <li class="el-table-filter__list-item"
+    <div class="ivu-table-filter" v-else v-show="showPopper">
+      <ul class="ivu-table-filter__list">
+        <li class="ivu-table-filter__list-item"
             :class="{ 'is-active': filterValue === undefined || filterValue === null }"
             @click="handleSelect(null)">{{ t('i.table.clearFilter') }}</li>
-        <li class="el-table-filter__list-item"
+        <li class="ivu-table-filter__list-item"
             v-for="filter in filters"
             :label="filter.value"
             :key="filter.value"
@@ -63,10 +63,10 @@
     },
 
     customRender(h) {
-      return (<div class="el-table-filter">
-        <div class="el-table-filter__content">
+      return (<div class="ivu-table-filter">
+        <div class="ivu-table-filter__content">
         </div>
-        <div class="el-table-filter__bottom">
+        <div class="ivu-table-filter__bottom">
           <button on-click={ this.handleConfirm }>{ this.t('i.table.confirmFilter') }</button>
           <button on-click={ this.handleReset }>{ this.t('i.table.resetFilter') }</button>
         </div>

@@ -22,23 +22,23 @@ order: 11
     style="width: 100%"
     :default-sort = "{prop: 'date', order: 'descending'}"
     >
-    <Table-column
+    <Column
       prop="date"
       label="日期"
       sortable
       width="180">
-    </Table-column>
-    <Table-column
+    </Column>
+    <Column
       prop="name"
       label="姓名"
       sortable
       width="180">
-    </Table-column>
-    <Table-column
+    </Column>
+    <Column
       prop="address"
       label="地址"
       :formatter="formatter">
-    </Table-column>
+    </Column>
   </Table>
 </template>
 

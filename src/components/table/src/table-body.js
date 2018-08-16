@@ -29,7 +29,7 @@ export default {
     const columnsHidden = this.columns.map((column, index) => this.isColumnHidden(index));
     return (
       <table
-        class="el-table__body"
+        class="ivu-table__body"
         cellspacing="0"
         cellpadding="0"
         border="0">
@@ -118,7 +118,7 @@ export default {
               </tr>,
                 this.store.states.expandRows.indexOf(row) > -1
                 ? (<tr>
-                    <td colspan={ this.columns.length } class="el-table__expanded-cell">
+                    <td colspan={ this.columns.length } class="ivu-table__expanded-cell">
                       { this.table.renderExpanded ? this.table.renderExpanded(h, { row, $index, store: this.store }) : ''}
                     </td>
                   </tr>)
@@ -139,7 +139,7 @@ export default {
       const el = this.$el;
       if (!el) return;
       const tr = el.querySelector('tbody').children;
-      const rows = [].filter.call(tr, row => hasClass(row, 'el-table__row'));
+      const rows = [].filter.call(tr, row => hasClass(row, 'ivu-table__row'));
       const oldRow = rows[oldVal];
       const newRow = rows[newVal];
       if (oldRow) {
@@ -155,7 +155,7 @@ export default {
       if (!el) return;
       const data = this.store.states.data;
       const tr = el.querySelector('tbody').children;
-      const rows = [].filter.call(tr, row => hasClass(row, 'el-table__row'));
+      const rows = [].filter.call(tr, row => hasClass(row, 'ivu-table__row'));
       const oldRow = rows[data.indexOf(oldVal)];
       const newRow = rows[data.indexOf(newVal)];
       if (oldRow) {
@@ -272,10 +272,10 @@ export default {
     },
 
     getRowClass(row, rowIndex) {
-      const classes = ['el-table__row'];
+      const classes = ['ivu-table__row'];
 
       if (this.stripe && rowIndex % 2 === 1) {
-        classes.push('el-table__row--striped');
+        classes.push('ivu-table__row--striped');
       }
       const rowClassName = this.table.rowClassName;
       if (typeof rowClassName === 'string') {
@@ -342,7 +342,7 @@ export default {
       // 判断是否text-overflow, 如果是就显示tooltip
       const cellChild = event.target.querySelector('.cell');
 
-      if (hasClass(cellChild, 'el-tooltip') && cellChild.scrollWidth > cellChild.offsetWidth && this.$refs.tooltip) {
+      if (hasClass(cellChild, 'ivu-tooltip') && cellChild.scrollWidth > cellChild.offsetWidth && this.$refs.tooltip) {
         const tooltip = this.$refs.tooltip;
 
         this.tooltipContent = cell.textContent || cell.innerText;

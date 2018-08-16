@@ -32,13 +32,11 @@ order: 9
       label="姓名"
       width="180">
       <template slot-scope="scope">
-        <el-popover trigger="hover" placement="top">
           <p>姓名: {{ scope.row.name }}</p>
           <p>住址: {{ scope.row.address }}</p>
           <div slot="reference" class="name-wrapper">
             <Tag>{{ scope.row.name }}</Tag>
           </div>
-        </el-popover>
       </template>
     </Column>
     <Column label="操作">
@@ -48,7 +46,7 @@ order: 9
           @click="handleEdit(scope.$index, scope.row)">编辑</Button>
         <Button
           size="small"
-          type="danger"
+          type="error"
           @click="handleDelete(scope.$index, scope.row)">删除</Button>
       </template>
     </Column>

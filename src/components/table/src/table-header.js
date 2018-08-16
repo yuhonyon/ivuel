@@ -75,7 +75,7 @@ export default {
 
     return (
       <table
-        class="el-table__header"
+        class="ivu-table__header"
         cellspacing="0"
         cellpadding="0"
         border="0">
@@ -129,7 +129,7 @@ export default {
                     }
                     {
                       column.filterable
-                         ? <span class="el-table__column-filter-trigger" on-click={ ($event) => this.handleFilterClick($event, column) }>
+                         ? <span class="ivu-table__column-filter-trigger" on-click={ ($event) => this.handleFilterClick($event, column) }>
                            <Icon type={column.filterOpened? 'ios-arrow-up':'ios-arrow-down'}></Icon>
                          </span>
                         : ''
