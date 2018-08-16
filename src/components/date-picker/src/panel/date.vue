@@ -1,24 +1,24 @@
 <template>
-  <transition name="el-zoom-in-top" @after-enter="handleEnter" @after-leave="handleLeave">
+  <transition name="ivu-zoom-in-top" @after-enter="handleEnter" @after-leave="handleLeave">
     <div
       v-show="visible"
-      class="el-picker-panel el-date-picker el-popper"
+      class="ivu-picker-panel ivu-date-picker ivu-popper"
       :class="[{
         'has-sidebar': $slots.sidebar || shortcuts,
         'has-time': showTime
       }, popperClass]">
-      <div class="el-picker-panel__body-wrapper">
-        <slot name="sidebar" class="el-picker-panel__sidebar"></slot>
-        <div class="el-picker-panel__sidebar" v-if="shortcuts">
+      <div class="ivu-picker-panel__body-wrapper">
+        <slot name="sidebar" class="ivu-picker-panel__sidebar"></slot>
+        <div class="ivu-picker-panel__sidebar" v-if="shortcuts">
           <button
             type="button"
-            class="el-picker-panel__shortcut"
+            class="ivu-picker-panel__shortcut"
             v-for="shortcut in shortcuts"
             @click="handleShortcutClick(shortcut)">{{ shortcut.text }}</button>
         </div>
-        <div class="el-picker-panel__body">
-          <div class="el-date-picker__time-header" v-if="showTime">
-            <span class="el-date-picker__editor-wrap">
+        <div class="ivu-picker-panel__body">
+          <div class="ivu-date-picker__time-header" v-if="showTime">
+            <span class="ivu-date-picker__editor-wrap">
               <i-input
                 :placeholder="t('i.datepicker.selectDate')"
                 :value="visibleDate"
@@ -26,7 +26,7 @@
                 @on-input="val => userInputDate = val"
                 @on-change="handleVisibleDateChange" />
             </span>
-            <span class="el-date-picker__editor-wrap" v-clickoutside="() => timePickerVisible = false">
+            <span class="ivu-date-picker__editor-wrap" v-clickoutside="() => timePickerVisible = false">
               <i-input
                 ref="input"
                 @on-focus="timePickerVisible = true"
@@ -45,48 +45,48 @@
             </span>
           </div>
           <div
-            class="el-date-picker__header"
-            :class="{ 'el-date-picker__header--bordered': currentView === 'year' || currentView === 'month' }"
+            class="ivu-date-picker__header"
+            :class="{ 'ivu-date-picker__header--bordered': currentView === 'year' || currentView === 'month' }"
             v-show="currentView !== 'time'">
             <button
               type="button"
               @click="prevYear"
               :aria-label="t(`i.datepicker.prevYear`)"
-              class="el-picker-panel__icon-btn el-date-picker__prev-btn ivu-icon ivu-icon-ios-b-arrow-left">
+              class="ivu-picker-panel__icon-btn ivu-date-picker__prev-btn ivu-icon ivu-icon-ios-b-arrow-left">
             </button>
             <button
               type="button"
               @click="prevMonth"
               v-show="currentView === 'date'"
               :aria-label="t(`i.datepicker.prevMonth`)"
-              class="el-picker-panel__icon-btn el-date-picker__prev-btn ivu-icon ivu-icon-ios-arrow-left">
+              class="ivu-picker-panel__icon-btn ivu-date-picker__prev-btn ivu-icon ivu-icon-ios-arrow-left">
             </button>
             <span
               @click="showYearPicker"
               role="button"
-              class="el-date-picker__header-label">{{ yearLabel }}</span>
+              class="ivu-date-picker__header-label">{{ yearLabel }}</span>
             <span
               @click="showMonthPicker"
               v-show="currentView === 'date'"
               role="button"
-              class="el-date-picker__header-label"
+              class="ivu-date-picker__header-label"
               :class="{ active: currentView === 'month' }">{{t(`i.datepicker.month${ month + 1 }`)}}</span>
             <button
               type="button"
               @click="nextYear"
               :aria-label="t(`i.datepicker.nextYear`)"
-              class="el-picker-panel__icon-btn el-date-picker__next-btn ivu-icon ivu-icon-ios-b-arrow-right">
+              class="ivu-picker-panel__icon-btn ivu-date-picker__next-btn ivu-icon ivu-icon-ios-b-arrow-right">
             </button>
             <button
               type="button"
               @click="nextMonth"
               v-show="currentView === 'date'"
               :aria-label="t(`i.datepicker.nextMonth`)"
-              class="el-picker-panel__icon-btn el-date-picker__next-btn ivu-icon ivu-icon-ios-arrow-right">
+              class="ivu-picker-panel__icon-btn ivu-date-picker__next-btn ivu-icon ivu-icon-ios-arrow-right">
             </button>
           </div>
 
-          <div class="el-picker-panel__content">
+          <div class="ivu-picker-panel__content">
             <date-table
               v-show="currentView === 'date'"
               @pick="handleDatePick"
@@ -118,12 +118,12 @@
       </div>
 
       <div
-        class="el-picker-panel__footer"
+        class="ivu-picker-panel__footer"
         v-show="footerVisible && currentView === 'date'">
         <i-button
           size="small"
           type="text"
-          class="el-picker-panel__link-btn"
+          class="ivu-picker-panel__link-btn"
           :disabled="disabledDate&&disabledDate(new Date(),'time')"
           @click="changeToNow">
           {{ t('i.datepicker.now') }}
@@ -131,7 +131,7 @@
         <i-button
           plain
           size="small"
-          class="el-picker-panel__link-btn"
+          class="ivu-picker-panel__link-btn"
           @click="confirm">
           {{ t('i.datepicker.confirm') }}
         </i-button>

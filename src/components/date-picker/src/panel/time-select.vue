@@ -1,18 +1,18 @@
 <template>
-  <transition name="el-zoom-in-top" @before-enter="handleMenuEnter" @after-leave="$emit('dodestroy')">
+  <transition name="ivu-zoom-in-top" @before-enter="handleMenuEnter" @after-leave="$emit('dodestroy')">
     <div
       ref="popper"
       v-show="visible"
       :style="{ width: width + 'px' }"
       :class="popperClass"
-      class="el-picker-panel time-select el-popper">
-      <el-scrollbar noresize wrap-class="el-picker-panel__content">
+      class="ivu-picker-panel time-select ivu-popper">
+      <ivu-scrollbar noresize wrap-class="ivu-picker-panel__content">
         <div class="time-select-item"
           v-for="item in items"
           :class="{ selected: value === item.value, disabled: item.disabled, default: item.value === defaultValue }"
           :disabled="item.disabled"
           @click="handleClick(item)">{{ item.value }}</div>
-      </el-scrollbar>
+      </ivu-scrollbar>
     </div>
   </transition>
 </template>
@@ -94,7 +94,7 @@
       },
 
       scrollToOption(selector = '.selected') {
-        const menu = this.$refs.popper.querySelector('.el-picker-panel__content');
+        const menu = this.$refs.popper.querySelector('.ivu-picker-panel__content');
         scrollIntoView(menu, menu.querySelector(selector));
       },
 

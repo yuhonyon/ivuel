@@ -22,10 +22,10 @@
 
   </i-input>
   <div
-    class="el-date-editor el-range-editor el-input__inner"
+    class="ivu-date-editor ivu-range-editor ivu-input__inner"
     :class="[
-      'el-date-editor--' + type,
-      pickerSize ? `el-range-editor--${ pickerSize }` : '',
+      'ivu-date-editor--' + type,
+      pickerSize ? `ivu-range-editor--${ pickerSize }` : '',
       pickerDisabled ? 'is-disabled' : '',
       pickerVisible ? 'is-active' : ''
     ]"
@@ -47,8 +47,8 @@
       @input="handleStartInput"
       @change="handleStartChange"
       @focus="handleFocus"
-      class="el-range-input">
-    <span class="el-range-separator">{{ rangeSeparator }}</span>
+      class="ivu-range-input">
+    <span class="ivu-range-separator">{{ rangeSeparator }}</span>
     <input
       :placeholder="endPlaceholder"
       :value="displayValue && displayValue[1]"
@@ -59,7 +59,7 @@
       @input="handleEndInput"
       @change="handleEndChange"
       @focus="handleFocus"
-      class="el-range-input">
+      class="ivu-range-input">
 
     <i
       class="ivu-icon"

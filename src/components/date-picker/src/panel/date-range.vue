@@ -1,41 +1,41 @@
 <template>
-  <transition name="el-zoom-in-top" @after-leave="$emit('dodestroy')">
+  <transition name="ivu-zoom-in-top" @after-leave="$emit('dodestroy')">
     <div
       v-show="visible"
-      class="el-picker-panel el-date-range-picker el-popper"
+      class="ivu-picker-panel ivu-date-range-picker ivu-popper"
       :class="[{
         'has-sidebar': $slots.sidebar || shortcuts,
         'has-time': showTime
       }, popperClass]">
-      <div class="el-picker-panel__body-wrapper">
-        <slot name="sidebar" class="el-picker-panel__sidebar"></slot>
-        <div class="el-picker-panel__sidebar" v-if="shortcuts">
+      <div class="ivu-picker-panel__body-wrapper">
+        <slot name="sidebar" class="ivu-picker-panel__sidebar"></slot>
+        <div class="ivu-picker-panel__sidebar" v-if="shortcuts">
           <button
             type="button"
-            class="el-picker-panel__shortcut"
+            class="ivu-picker-panel__shortcut"
             v-for="shortcut in shortcuts"
             @click="handleShortcutClick(shortcut)">{{shortcut.text}}</button>
         </div>
-        <div class="el-picker-panel__body">
-          <div class="el-date-range-picker__time-header" v-if="showTime">
-            <span class="el-date-range-picker__editors-wrap">
-              <span class="el-date-range-picker__time-picker-wrap">
-                <el-input
+        <div class="ivu-picker-panel__body">
+          <div class="ivu-date-range-picker__time-header" v-if="showTime">
+            <span class="ivu-date-range-picker__editors-wrap">
+              <span class="ivu-date-range-picker__time-picker-wrap">
+                <ivu-input
                   size="small"
                   :disabled="rangeState.selecting"
                   ref="minInput"
                   :placeholder="t('i.datepicker.startDate')"
-                  class="el-date-range-picker__editor"
+                  class="ivu-date-range-picker__editor"
                   :value="minVisibleDate"
                   @input.native="handleDateInput($event, 'min')"
                   @change.native="handleDateChange($event, 'min')" />
               </span>
-              <span class="el-date-range-picker__time-picker-wrap" v-clickoutside="() => minTimePickerVisible = false">
-                <el-input
+              <span class="ivu-date-range-picker__time-picker-wrap" v-clickoutside="() => minTimePickerVisible = false">
+                <ivu-input
                   size="small"
                   :disabled="rangeState.selecting"
                   :placeholder="t('i.datepicker.startTime')"
-                  class="el-date-range-picker__editor"
+                  class="ivu-date-range-picker__editor"
                   :value="minVisibleTime"
                   @on-focus="minTimePickerVisible = true"
                   @on-change.native="handleTimeChange($event, 'min')" />
@@ -49,25 +49,25 @@
               </span>
             </span>
             <span class="ivu-icon ivu-icon-ios-arrow-right"></span>
-            <span class="el-date-range-picker__editors-wrap is-right">
-              <span class="el-date-range-picker__time-picker-wrap">
-                <el-input
+            <span class="ivu-date-range-picker__editors-wrap is-right">
+              <span class="ivu-date-range-picker__time-picker-wrap">
+                <ivu-input
                   size="small"
                   :disabled="rangeState.selecting"
                   :placeholder="t('i.datepicker.endDate')"
-                  class="el-date-range-picker__editor"
+                  class="ivu-date-range-picker__editor"
                   :value="maxVisibleDate"
                   :readonly="!minDate"
                   @on-input.native="handleDateInput($event, 'max')"
                   @on-change.native="handleDateChange($event, 'max')" />
               </span>
-              <span class="el-date-range-picker__time-picker-wrap" v-clickoutside="() => maxTimePickerVisible = false">
-                <el-input
+              <span class="ivu-date-range-picker__time-picker-wrap" v-clickoutside="() => maxTimePickerVisible = false">
+                <ivu-input
                   size="small"
                   :disabled="rangeState.selecting"
                   ref="maxInput"
                   :placeholder="t('i.datepicker.endTime')"
-                  class="el-date-range-picker__editor"
+                  class="ivu-date-range-picker__editor"
                   :value="maxVisibleTime"
                   @on-focus="minDate && (maxTimePickerVisible = true)"
                   :readonly="!minDate"
@@ -82,30 +82,30 @@
               </span>
             </span>
           </div>
-          <div class="el-picker-panel__content el-date-range-picker__content is-left">
-            <div class="el-date-range-picker__header">
+          <div class="ivu-picker-panel__content ivu-date-range-picker__content is-left">
+            <div class="ivu-date-range-picker__header">
               <button
                 type="button"
                 @click="leftPrevYear"
-                class="el-picker-panel__icon-btn ivu-icon ivu-icon-ios-b-arrow-left"></button>
+                class="ivu-picker-panel__icon-btn ivu-icon ivu-icon-ios-b-arrow-left"></button>
               <button
                 type="button"
                 @click="leftPrevMonth"
-                class="el-picker-panel__icon-btn ivu-icon ivu-icon-ios-arrow-left"></button>
+                class="ivu-picker-panel__icon-btn ivu-icon ivu-icon-ios-arrow-left"></button>
               <button
                 type="button"
                 @click="leftNextYear"
                 v-if="unlinkPanels"
                 :disabled="!enableYearArrow"
                 :class="{ 'is-disabled': !enableYearArrow }"
-                class="el-picker-panel__icon-btn ivu-icon ivu-icon-ios-b-arrow-right"></button>
+                class="ivu-picker-panel__icon-btn ivu-icon ivu-icon-ios-b-arrow-right"></button>
               <button
                 type="button"
                 @click="leftNextMonth"
                 v-if="unlinkPanels"
                 :disabled="!enableMonthArrow"
                 :class="{ 'is-disabled': !enableMonthArrow }"
-                class="el-picker-panel__icon-btn ivu-icon ivu-icon-ios-arrow-right"></button>
+                class="ivu-picker-panel__icon-btn ivu-icon ivu-icon-ios-arrow-right"></button>
               <div>{{ leftLabel }}</div>
             </div>
             <date-table
@@ -121,30 +121,30 @@
               @pick="handleRangePick">
             </date-table>
           </div>
-          <div class="el-picker-panel__content el-date-range-picker__content is-right">
-            <div class="el-date-range-picker__header">
+          <div class="ivu-picker-panel__content ivu-date-range-picker__content is-right">
+            <div class="ivu-date-range-picker__header">
               <button
                 type="button"
                 @click="rightPrevYear"
                 v-if="unlinkPanels"
                 :disabled="!enableYearArrow"
                 :class="{ 'is-disabled': !enableYearArrow }"
-                class="el-picker-panel__icon-btn ivu-icon ivu-icon-ios-b-arrow-left"></button>
+                class="ivu-picker-panel__icon-btn ivu-icon ivu-icon-ios-b-arrow-left"></button>
               <button
                 type="button"
                 @click="rightPrevMonth"
                 v-if="unlinkPanels"
                 :disabled="!enableMonthArrow"
                 :class="{ 'is-disabled': !enableMonthArrow }"
-                class="el-picker-panel__icon-btn ivu-icon ivu-icon-ios-arrow-left"></button>
+                class="ivu-picker-panel__icon-btn ivu-icon ivu-icon-ios-arrow-left"></button>
               <button
                 type="button"
                 @click="rightNextYear"
-                class="el-picker-panel__icon-btn ivu-icon ivu-icon-ios-b-arrow-right"></button>
+                class="ivu-picker-panel__icon-btn ivu-icon ivu-icon-ios-b-arrow-right"></button>
               <button
                 type="button"
                 @click="rightNextMonth"
-                class="el-picker-panel__icon-btn ivu-icon ivu-icon-ios-arrow-right"></button>
+                class="ivu-picker-panel__icon-btn ivu-icon ivu-icon-ios-arrow-right"></button>
               <div>{{ rightLabel }}</div>
             </div>
             <date-table
@@ -162,22 +162,22 @@
           </div>
         </div>
       </div>
-      <div class="el-picker-panel__footer" v-if="showTime">
-        <el-button
+      <div class="ivu-picker-panel__footer" v-if="showTime">
+        <ivu-button
           size="small"
           type="text"
-          class="el-picker-panel__link-btn"
+          class="ivu-picker-panel__link-btn"
           @click="handleClear">
           {{ t('i.datepicker.clear') }}
-        </el-button>
-        <el-button
+        </ivu-button>
+        <ivu-button
           plain
           size="small"
-          class="el-picker-panel__link-btn"
+          class="ivu-picker-panel__link-btn"
           :disabled="btnDisabled"
           @click="handleConfirm()">
           {{ t('i.datepicker.confirm') }}
-        </el-button>
+        </ivu-button>
       </div>
     </div>
   </transition>

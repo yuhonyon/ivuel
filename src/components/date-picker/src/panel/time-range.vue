@@ -1,17 +1,17 @@
 <template>
   <transition
-    name="el-zoom-in-top"
+    name="ivu-zoom-in-top"
     @after-leave="$emit('dodestroy')">
     <div
       v-show="visible"
-      class="el-time-range-picker el-picker-panel el-popper"
+      class="ivu-time-range-picker ivu-picker-panel ivu-popper"
       :class="popperClass">
-      <div class="el-time-range-picker__content">
-        <div class="el-time-range-picker__cell">
-          <div class="el-time-range-picker__header">{{ t('i.datepicker.startTime') }}</div>
+      <div class="ivu-time-range-picker__content">
+        <div class="ivu-time-range-picker__cell">
+          <div class="ivu-time-range-picker__header">{{ t('i.datepicker.startTime') }}</div>
           <div
             :class="{ 'has-seconds': showSeconds, 'is-arrow': arrowControl }"
-            class="el-time-range-picker__body el-time-panel__content">
+            class="ivu-time-range-picker__body ivu-time-panel__content">
             <time-spinner
               ref="minSpinner"
               :show-seconds="showSeconds"
@@ -23,11 +23,11 @@
             </time-spinner>
           </div>
         </div>
-        <div class="el-time-range-picker__cell">
-          <div class="el-time-range-picker__header">{{ t('i.datepicker.endTime') }}</div>
+        <div class="ivu-time-range-picker__cell">
+          <div class="ivu-time-range-picker__header">{{ t('i.datepicker.endTime') }}</div>
           <div
             :class="{ 'has-seconds': showSeconds, 'is-arrow': arrowControl }"
-            class="el-time-range-picker__body el-time-panel__content">
+            class="ivu-time-range-picker__body ivu-time-panel__content">
             <time-spinner
               ref="maxSpinner"
               :show-seconds="showSeconds"
@@ -40,14 +40,14 @@
           </div>
         </div>
       </div>
-      <div class="el-time-panel__footer">
+      <div class="ivu-time-panel__footer">
         <button
           type="button"
-          class="el-time-panel__btn cancel"
+          class="ivu-time-panel__btn cancel"
           @click="handleCancel()">{{ t('i.datepicker.cancel') }}</button>
         <button
           type="button"
-          class="el-time-panel__btn confirm"
+          class="ivu-time-panel__btn confirm"
           @click="handleConfirm()"
           :disabled="btnDisabled">{{ t('i.datepicker.confirm') }}</button>
       </div>
