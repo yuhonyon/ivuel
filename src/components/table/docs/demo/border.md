@@ -1,11 +1,11 @@
 ---
 title:
-  zh-CN: 表格
+  zh-CN: 带边框表格
   en-US: Button Size
 desc:
   zh-CN: 描述
   en-US: Button
-order: 1
+order: 2
 ---
 
 # zh-CN

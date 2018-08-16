@@ -1,11 +1,11 @@
 ---
 title:
-  zh-CN: 表格
+  zh-CN: 嵌套表头
   en-US: Button Size
 desc:
   zh-CN: 描述
   en-US: Button
-order: 1
+order: 14
 ---
 
 # zh-CN

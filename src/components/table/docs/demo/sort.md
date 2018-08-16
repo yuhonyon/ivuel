@@ -1,11 +1,11 @@
 ---
 title:
-  zh-CN: 单选
+  zh-CN: 排序
   en-US: Button Size
 desc:
   zh-CN: 描述
   en-US: Button
-order: 7
+order: 11
 ---
 
 # zh-CN
@@ -18,34 +18,28 @@ order: 7
 ```vue
 <template>
   <Table
-    ref="singleTable"
     :data="tableData"
-    highlight-current-row
-    @current-change="handleCurrentChange"
-    style="width: 100%">
-    <Column
-      type="index"
-      width="50">
-    </Column>
-    <Column
-      property="date"
+    style="width: 100%"
+    :default-sort = "{prop: 'date', order: 'descending'}"
+    >
+    <Table-column
+      prop="date"
       label="日期"
-      width="120">
-    </Column>
-    <Column
-      property="name"
+      sortable
+      width="180">
+    </Table-column>
+    <Table-column
+      prop="name"
       label="姓名"
-      width="120">
-    </Column>
-    <Column
-      property="address"
-      label="地址">
-    </Column>
+      sortable
+      width="180">
+    </Table-column>
+    <Table-column
+      prop="address"
+      label="地址"
+      :formatter="formatter">
+    </Table-column>
   </Table>
-  <div style="margin-top: 20px">
-    <Button @click="setCurrent(tableData[1])">选中第二行</Button>
-    <Button @click="setCurrent()">取消选择</Button>
-  </div>
 </template>
 
 <script>
@@ -68,17 +62,12 @@ order: 7
           date: '2016-05-03',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1516 弄'
-        }],
-        currentRow: null
+        }]
       }
     },
-
     methods: {
-      setCurrent(row) {
-        this.$refs.singleTable.setCurrentRow(row);
-      },
-      handleCurrentChange(val) {
-        this.currentRow = val;
+      formatter(row, column) {
+        return row.address;
       }
     }
   }

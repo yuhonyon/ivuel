@@ -1,11 +1,11 @@
 ---
 title:
-  zh-CN: 表格
+  zh-CN: 多选
   en-US: Button Size
 desc:
   zh-CN: 描述
   en-US: Button
-order: 1
+order: 8
 ---
 
 # zh-CN
@@ -17,35 +17,35 @@ order: 1
 
 ```vue
 <template>
-  <el-table
+  <Table
     ref="multipleTable"
     :data="tableData3"
     tooltip-effect="dark"
     style="width: 100%"
     @selection-change="handleSelectionChange">
-    <el-table-column
+    <Column
       type="selection"
       width="55">
-    </el-table-column>
-    <el-table-column
+    </Column>
+    <Column
       label="日期"
       width="120">
       <template slot-scope="scope">{{ scope.row.date }}</template>
-    </el-table-column>
-    <el-table-column
+    </Column>
+    <Column
       prop="name"
       label="姓名"
       width="120">
-    </el-table-column>
-    <el-table-column
+    </Column>
+    <Column
       prop="address"
       label="地址"
       show-overflow-tooltip>
-    </el-table-column>
-  </el-table>
+    </Column>
+  </Table>
   <div style="margin-top: 20px">
-    <el-button @click="toggleSelection([tableData3[1], tableData3[2]])">切换第二、第三行的选中状态</el-button>
-    <el-button @click="toggleSelection()">取消选择</el-button>
+    <Button @click="toggleSelection([tableData3[1], tableData3[2]])">切换第二、第三行的选中状态</Button>
+    <Button @click="toggleSelection()">取消选择</Button>
   </div>
 </template>
 

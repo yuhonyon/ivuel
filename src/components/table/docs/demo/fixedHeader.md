@@ -1,17 +1,18 @@
 ---
 title:
-  zh-CN: 表格
+  zh-CN: 固定表头
   en-US: Button Size
 desc:
   zh-CN: 描述
   en-US: Button
-order: 1
+order: 5
 ---
 
 # zh-CN
 
 
 # en-US
+
 
 
 
