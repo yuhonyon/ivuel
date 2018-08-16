@@ -125,7 +125,7 @@ export default {
                 : ''
               ]
             ).concat(
-              <Tooltip effect={ this.table.tooltipEffect } placement="top" ref="tooltip" content={ this.tooltipContent }></Tooltip>
+              <Tooltip transfer style="display:none;" effect={ this.table.tooltipEffect } placement="top" ref="tooltip" max-width={this.tooltipContentWidth} content={ this.tooltipContent }></Tooltip>
             )
           }
         </tbody>
@@ -205,7 +205,8 @@ export default {
 
   data() {
     return {
-      tooltipContent: ''
+      tooltipContent: '',
+      tooltipContentWidth:200
     };
   },
 
@@ -341,14 +342,19 @@ export default {
 
       // 判断是否text-overflow, 如果是就显示tooltip
       const cellChild = event.target.querySelector('.cell');
+      console.log(hasClass(cellChild, 'ivu-tabel-tooltip'))
 
-      if (hasClass(cellChild, 'ivu-tooltip') && cellChild.scrollWidth > cellChild.offsetWidth && this.$refs.tooltip) {
+      if (hasClass(cellChild, 'ivu-tabel-tooltip') && cellChild.scrollWidth > cellChild.offsetWidth && this.$refs.tooltip) {
         const tooltip = this.$refs.tooltip;
 
         this.tooltipContent = cell.textContent || cell.innerText;
-        tooltip.referenceElm = cell;
+        this.tooltipContentWidth=cellChild.offsetWidth>200?cellChild.offsetWidth:200;
+        tooltip.$refs.reference = cell;
         tooltip.$refs.popper && (tooltip.$refs.popper.style.display = 'none');
-        tooltip.doDestroy();
+        if(tooltip.popperJS){
+          tooltip.doDestroy();
+        }
+
         //tooltip.setExpectedState(true);  yfyno
         this.activateTooltip(tooltip);
       }

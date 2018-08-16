@@ -33,6 +33,7 @@ order: 2
       </Column>
       <Column
         prop="address"
+        showOverflowTooltip
         label="地址">
       </Column>
     </Table>
@@ -57,10 +58,15 @@ order: 2
           }, {
             date: '2016-05-03',
             name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄'
+            address: '上海市普陀区金沙江路 1516 弄上海市普陀区金沙江路 1516 弄上海市普陀区金沙江路 1516 弄上海市普陀区金沙江路 1516 弄上海市普陀区金沙江路 1516 弄上海市普陀区金沙江路 1516 弄上海市普陀区金沙江路 1516 弄上海市普陀区金沙江路 1516 弄上海市普陀区金沙江路 1516 弄上海市普陀区金沙江路 1516 弄上海市普陀区金沙江路 1516 弄'
           }]
         }
       }
     }
   </script>
+  <style>
+  .cell{
+    white-space: nowrap!important;
+  }
+  </style>
 ```

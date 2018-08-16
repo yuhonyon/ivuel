@@ -5,7 +5,7 @@
         </div>
         <transition name="fade">
             <div
-                :class="[prefixCls + '-popper']"
+                :class="[prefixCls + '-popper',tooltipClassName]"
                 ref="popper"
                 v-show="!disabled && (visible || always)"
                 @mouseenter="handleMouseenter"
@@ -47,6 +47,10 @@
             content: {
                 type: [String, Number],
                 default: ''
+            },
+            tooltipClassName:{
+              type: String,
+              default: ""
             },
             delay: {
                 type: Number,

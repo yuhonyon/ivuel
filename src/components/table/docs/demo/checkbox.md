@@ -40,7 +40,7 @@ order: 8
     <Column
       prop="address"
       label="地址"
-      show-overflow-tooltip>
+      >
     </Column>
   </Table>
   <div style="margin-top: 20px">

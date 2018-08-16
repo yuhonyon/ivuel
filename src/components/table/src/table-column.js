@@ -2,7 +2,7 @@ import Checkbox from '../../checkbox';
 import Tag from '../../tag';
 import objectAssign from '../../../utils/merge';
 import { getPropByPath } from '../../../utils/assist';
-import Tooltip from '../../tooltip'
+//import Tooltip from '../../tooltip'
 let columnIdSeed = 1;
 
 const defaults = {
@@ -176,7 +176,7 @@ export default {
   components: {
     Checkbox,
     Tag,
-    Tooltip
+    //Tooltip
   },
 
   computed: {
@@ -284,12 +284,13 @@ export default {
       }
 
       let cell=renderCell(h, data);
-      return _self.showOverflowTooltip || _self.showTooltipWhenOverflow
-        ?<Tooltip transfer popper-class="ivu-tabivu-tooltip">
-          <div slot="content" style={'max-width:' + (data.column.realWidth || data.column.width) + 'px'}>{ cell }</div>
-          { cell }
-        </Tooltip>
-        : <div class="cell">{ cell }</div>;
+      return <div class={"cell"+((_self.showOverflowTooltip || _self.showTooltipWhenOverflow)?" ivu-tabel-tooltip":"")}>{ cell }</div>
+      // return _self.showOverflowTooltip || _self.showTooltipWhenOverflow
+      //   ?<Tooltip transfer tooltipClassName="ivu-tabel-tooltip">
+      //     <div slot="content" style={'max-width:' + (data.column.realWidth || data.column.width) + 'px'}>{ cell }</div>
+      //     { cell }
+      //   </Tooltip>
+      //   : <div class="cell">{ cell }</div>;  //tooltip
     };
   },
 
