@@ -3,14 +3,14 @@ title:
   zh-CN: 基础表格
   en-US: Button Size
 desc:
-  zh-CN: 按钮有六种类型：主按钮、次按钮、虚线按钮、危险按钮。
+  zh-CN: 基础的表格展示用法。
   en-US: Button
 author: yufangyang
 order: 1
 ---
 
 # zh-CN
-
+当`Table`元素中注入data对象数组后，在`Column`中用prop属性来对应对象中的键名即可填入数据，用label属性来定义表格的列名。可以使用width属性来定义列宽。
 
 # en-US
 

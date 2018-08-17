@@ -1,7 +1,7 @@
 ---
 title:
   zh-CN: 固定表头
-  en-US: Button Size
+  en-US: 纵向内容过多时，可选择固定表头。
 desc:
   zh-CN: 描述
   en-US: Button
@@ -9,7 +9,7 @@ order: 5
 ---
 
 # zh-CN
-
+只要在`Table`元素中定义了`height`属性，即可实现固定表头的表格，而不需要额外的代码。
 
 # en-US
 

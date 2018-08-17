@@ -28,7 +28,7 @@
                                 v-if="isPopperShow(column)"
                                 v-model="getColumn(rowIndex, index)._filterVisible"
                                 placement="bottom"
-                                popper-class="ivu-table-popper"
+                                popper-class="ivu-grid-popper"
                                 transfer
                                 @on-popper-hide="handleFilterHide(getColumn(rowIndex, index)._index)">
                                 <span :class="[prefixCls + '-filter']">

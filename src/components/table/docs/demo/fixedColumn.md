@@ -3,7 +3,7 @@ title:
   zh-CN: 固定列
   en-US: Button Size
 desc:
-  zh-CN: 描述
+  zh-CN: 横向内容过多时，可选择固定列。
   en-US: Button
 order: 6
 ---

@@ -3,13 +3,13 @@ title:
   zh-CN: 状态
   en-US: Button Size
 desc:
-  zh-CN: 描述
+  zh-CN: 可将表格内容 highlight 显示，方便区分「成功、信息、警告、危险」等内容。
   en-US: Button
 order: 3
 ---
 
 # zh-CN
-
+可以通过指定 `Table` 组件的 `row-class-name` 属性来为 `Table` 中的某一行添加 `class`，表明该行处于某种状态。
 
 # en-US
 

@@ -3,7 +3,7 @@ title:
   zh-CN: 带条纹表格
   en-US: Button Size
 desc:
-  zh-CN: 描述
+  zh-CN: 使用带斑马纹的表格，可以更容易区分出不同行的数据。
   en-US: Button
 order: 4
 ---

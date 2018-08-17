@@ -3,7 +3,7 @@ title:
   zh-CN: 带边框表格
   en-US: Button Size
 desc:
-  zh-CN: 描述
+  zh-CN: 边框表格的用法
   en-US: Button
 order: 2
 ---
