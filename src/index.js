@@ -49,7 +49,7 @@ import Tabs from './components/tabs';
 import Tag from './components/tag';
 import Time from './components/time';
 import Timeline from './components/timeline';
-//import TimePicker from './components/time-picker';
+import TimePicker from './components/time-picker';
 import Tooltip from './components/tooltip';
 import Transfer from './components/transfer';
 import Tree from './components/tree';
@@ -131,7 +131,7 @@ const components = {
     Time,
     Timeline,
     TimelineItem: Timeline.Item,
-    //TimePicker,
+    TimePicker,
     Tooltip,
     Transfer,
     Tree,

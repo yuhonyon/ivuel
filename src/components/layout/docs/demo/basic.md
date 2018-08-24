@@ -1,12 +1,12 @@
 ---
 title:
-  zh-CN: 按钮尺寸
+  zh-CN: 基本结构
   en-US: Button Size
 desc:
-  zh-CN: 按钮有六种类型：主按钮、次按钮、虚线按钮、危险按钮。
+  zh-CN: 典型的页面布局。
   en-US: Button
 author: yufangyang
-order: 1
+order: 0
 ---
 
 # zh-CN
@@ -18,16 +18,40 @@ order: 1
 
 ```vue
 <template>
-    <Button>Default</Button>
-    <Button type="primary">Primary</Button>
-    <Button type="ghost">Ghost</Button>
-    <Button type="dashed">Dashed</Button>
-    <Button type="text">Text</Button>
-    <br><br>
-    <Button type="info">Info</Button>
-    <Button type="success">Success</Button>
-    <Button type="warning">Warning</Button>
-    <Button type="error">Error</Button>
+<div class="layout">
+    <Layout>
+        <Header>Header</Header>
+        <Content>Content</Content>
+        <Footer>Footer</Footer>
+    </Layout>
+
+    <Layout>
+        <Header>Header</Header>
+        <Layout>
+            <Sider hide-trigger>Sider</Sider>
+            <Content>Content</Content>
+        </Layout>
+        <Footer>Footer</Footer>
+    </Layout>
+
+    <Layout>
+        <Header>Header</Header>
+        <Layout>
+            <Content>Content</Content>
+            <Sider hide-trigger>Sider</Sider>
+        </Layout>
+        <Footer>Footer</Footer>
+    </Layout>
+
+    <Layout>
+        <Sider hide-trigger>Sider</Sider>
+        <Layout>
+            <Header>Header</Header>
+            <Content>Content</Content>
+            <Footer>Footer</Footer>
+        </Layout>
+    </Layout>
+</div>
 </template>
 <script>
     export default {

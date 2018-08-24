@@ -52,7 +52,7 @@
               type="button"
               @click="prevYear"
               :aria-label="t(`i.datepicker.prevYear`)"
-              class="ivu-picker-panel__icon-btn ivu-date-picker__prev-btn ivu-icon ivu-icon-ios-b-arrow-left">
+              class="ivu-picker-panel__icon-btn ivu-date-picker__prev-btn ivu-icon ivu-icon-ios-arrow-left">
             </button>
             <button
               type="button"
@@ -75,7 +75,7 @@
               type="button"
               @click="nextYear"
               :aria-label="t(`i.datepicker.nextYear`)"
-              class="ivu-picker-panel__icon-btn ivu-date-picker__next-btn ivu-icon ivu-icon-ios-b-arrow-right">
+              class="ivu-picker-panel__icon-btn ivu-date-picker__next-btn ivu-icon ivu-icon-ios-arrow-right">
             </button>
             <button
               type="button"

@@ -1,9 +1,9 @@
 ---
 title:
-  zh-CN: Button 按钮
+  zh-CN: Collapse 折叠面板
   en-US: Button
 desc:
-  zh-CN: 基础组件，触发业务逻辑时使用。
+  zh-CN: 将内容区域折叠/展开。
   en-US: Basic component that is used to trigger bussiness logic.
 ---
 

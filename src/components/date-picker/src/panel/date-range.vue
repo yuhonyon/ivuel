@@ -87,7 +87,7 @@
               <button
                 type="button"
                 @click="leftPrevYear"
-                class="ivu-picker-panel__icon-btn ivu-icon ivu-icon-ios-b-arrow-left"></button>
+                class="ivu-picker-panel__icon-btn ivu-icon ivu-icon-ios-arrow-left"></button>
               <button
                 type="button"
                 @click="leftPrevMonth"
@@ -98,7 +98,7 @@
                 v-if="unlinkPanels"
                 :disabled="!enableYearArrow"
                 :class="{ 'is-disabled': !enableYearArrow }"
-                class="ivu-picker-panel__icon-btn ivu-icon ivu-icon-ios-b-arrow-right"></button>
+                class="ivu-picker-panel__icon-btn ivu-icon ivu-icon-ios-arrow-right"></button>
               <button
                 type="button"
                 @click="leftNextMonth"
@@ -129,7 +129,7 @@
                 v-if="unlinkPanels"
                 :disabled="!enableYearArrow"
                 :class="{ 'is-disabled': !enableYearArrow }"
-                class="ivu-picker-panel__icon-btn ivu-icon ivu-icon-ios-b-arrow-left"></button>
+                class="ivu-picker-panel__icon-btn ivu-icon ivu-icon-ios-arrow-left"></button>
               <button
                 type="button"
                 @click="rightPrevMonth"
@@ -140,7 +140,7 @@
               <button
                 type="button"
                 @click="rightNextYear"
-                class="ivu-picker-panel__icon-btn ivu-icon ivu-icon-ios-b-arrow-right"></button>
+                class="ivu-picker-panel__icon-btn ivu-icon ivu-icon-ios-arrow-right"></button>
               <button
                 type="button"
                 @click="rightNextMonth"

@@ -18,13 +18,15 @@ order: 1
 
 ```vue
 <template>
-    <DatePicker v-model="date" value-format="yyyy/MM/dd"></DatePicker>
+    <DatePicker value-format='yyyy-MM-dd' max-date="today" min-date="2018-7-23" type="date"  v-model="date"></DatePicker>
+    <TimePicker :value-format="'HH:mm'" :format="'HH:mm'"  v-model="time"></TimePicker>
 </template>
 <script>
     export default {
       data(){
         return {
-          date:new Date().getTime()
+          date:null,
+          time:null
         }
       }
     }

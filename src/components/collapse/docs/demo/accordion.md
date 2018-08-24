@@ -1,16 +1,16 @@
 ---
 title:
-  zh-CN: 基础用法
+  zh-CN: 手风琴
   en-US: Button Size
 desc:
-  zh-CN: 默认可以同时展开多个面板，可以设置默认展开第几个。
+  zh-CN:
   en-US: Button
 author: yufangyang
-order: 1
+order: 2
 ---
 
 # zh-CN
-
+通过设置属性`accordion`开启手风琴模式，每次只能打开一个面板。
 
 # en-US
 
@@ -18,7 +18,7 @@ order: 1
 
 ```vue
 <template>
-    <Collapse v-model="value1">
+    <Collapse v-model="value2" accordion>
         <Panel name="1">
             史蒂夫·乔布斯
             <p slot="content">史蒂夫·乔布斯（Steve Jobs），1955年2月24日生于美国加利福尼亚州旧金山，美国发明家、企业家、美国苹果公司联合创办人。</p>
@@ -37,7 +37,7 @@ order: 1
     export default {
         data () {
             return {
-                value1: '1'
+                value2: '1'
             }
         }
     }

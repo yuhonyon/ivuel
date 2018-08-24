@@ -1,9 +1,9 @@
 ---
 title:
-  zh-CN: 模态框
+  zh-CN: Modal 对话框
   en-US: Button Size
 desc:
-  zh-CN: 按钮有六种类型：主按钮、次按钮、虚线按钮、危险按钮。
+  zh-CN: 模态对话框，在浮层中显示，引导用户进行相关操作
   en-US: Button
 author: yufangyang
 order: 1
@@ -11,6 +11,7 @@ order: 1
 
 # zh-CN
 
+`Modal`提供了两种用法，普通组件使用和封装好的简洁实例调用。
 
 # en-US
 

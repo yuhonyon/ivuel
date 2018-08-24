@@ -1,7 +1,7 @@
 <template>
   <div class="ivu-time-spinner" :class="{ 'has-seconds': showSeconds }">
     <template v-if="!arrowControl">
-      <ivu-scrollbar
+      <i-scrollbar
         @mouseenter.native="emitSelectRange('hours')"
         @mousemove.native="adjustCurrentSpinner('hours')"
         class="ivu-time-spinner__wrapper"
@@ -15,8 +15,8 @@
           v-for="(disabled, hour) in hoursList"
           class="ivu-time-spinner__item"
           :class="{ 'active': hour === hours, 'disabled': disabled }">{{ ('0' + (amPmMode ? (hour % 12 || 12) : hour )).slice(-2) }}{{ amPm(hour) }}</li>
-      </ivu-scrollbar>
-      <ivu-scrollbar
+      </i-scrollbar>
+      <i-scrollbar
         @mouseenter.native="emitSelectRange('minutes')"
         @mousemove.native="adjustCurrentSpinner('minutes')"
         class="ivu-time-spinner__wrapper"
@@ -30,8 +30,8 @@
           v-for="(minute, key) in 60"
           class="ivu-time-spinner__item"
           :class="{ 'active': key === minutes }">{{ ('0' + key).slice(-2) }}</li>
-      </ivu-scrollbar>
-      <ivu-scrollbar
+      </i-scrollbar>
+      <i-scrollbar
         v-show="showSeconds"
         @mouseenter.native="emitSelectRange('seconds')"
         @mousemove.native="adjustCurrentSpinner('seconds')"
@@ -46,7 +46,7 @@
           v-for="(second, key) in 60"
           class="ivu-time-spinner__item"
           :class="{ 'active': key === seconds }">{{ ('0' + key).slice(-2) }}</li>
-      </ivu-scrollbar>
+      </i-scrollbar>
     </template>
     <template v-if="arrowControl">
       <div
@@ -96,11 +96,11 @@
 
 <script type="text/babel">
   import { getRangeHours, modifyTime } from '../util';
-  import ElScrollbar from '../../../scrollbar';
+  import IScrollbar from '../../../scrollbar';
   import RepeatClick from '../../../../directives/repeat-click';
 
   export default {
-    components: { ElScrollbar },
+    components: { IScrollbar },
 
     directives: {
       repeatClick: RepeatClick

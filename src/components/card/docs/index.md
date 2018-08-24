@@ -1,9 +1,9 @@
 ---
 title:
-  zh-CN: Button 按钮
+  zh-CN: Card 卡片
   en-US: Button
 desc:
-  zh-CN: 基础组件，触发业务逻辑时使用。
+  zh-CN: 基础容器，用来显示文字、列表、图文等内容，也可以配合其它组件一起使用。
   en-US: Basic component that is used to trigger bussiness logic.
 ---
 
