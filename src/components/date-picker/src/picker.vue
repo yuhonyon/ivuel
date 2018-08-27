@@ -303,6 +303,7 @@ export default {
   props: {
     maxDate:null,
     minDate:null,
+    forceUpdate:Boolean,
     size: String,
     format: String,
     valueFormat: String,
@@ -661,7 +662,6 @@ export default {
 
     handleFocus() {
       const type = this.type;
-
       if (HAVE_TRIGGER_TYPES.indexOf(type) !== -1 && !this.pickerVisible) {
         this.pickerVisible = true;
       }
@@ -851,6 +851,10 @@ export default {
       this.unwatchPickerOptions = this.$watch('pickerOptions', () => updateOptions(), { deep: true });
       this.unwatchMaxDate=this.$watch('maxDate',()=>updateOptions())
       this.unwatchMinDate=this.$watch('minDate',()=>updateOptions())
+      if(this.forceUpdate){
+        this.unwatchPickerVisible=this.$watch('pickerVisible',(val)=>{val&&updateOptions()})
+      }
+
 
 
       this.$el.appendChild(this.picker.$el);
@@ -888,6 +892,9 @@ export default {
         }
         if (typeof this.unwatchMinDate === 'function') {
           this.unwatchMinDate();
+        }
+        if(typeof this.unwatchPickerVisible === 'function'){
+          this.unwatchPickerVisible()
         }
         this.picker.$el.parentNode.removeChild(this.picker.$el);
       }
