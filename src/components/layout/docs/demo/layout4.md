@@ -5,7 +5,7 @@ title:
 desc:
   zh-CN: 侧边两列式布局。页面横向空间有限时，侧边导航可收起。
   en-US: Button
-author: yufangyang
+
 order: 4
 ---
 

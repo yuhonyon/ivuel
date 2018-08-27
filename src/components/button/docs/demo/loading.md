@@ -5,7 +5,7 @@ title:
 desc:
   zh-CN: 通过添加loading属性可以让按钮处于加载中状态，后两个按钮在点击时进入加载状态。
   en-US: Button
-author: yufangyang
+
 order: 6
 ---
 

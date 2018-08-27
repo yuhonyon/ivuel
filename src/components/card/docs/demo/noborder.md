@@ -5,7 +5,7 @@ title:
 desc:
   zh-CN: 通过设置属性bordered为 false ，可以不添加边框，建议在灰色背景下使用。
   en-US: Button
-author: yufangyang
+
 order: 3
 ---
 

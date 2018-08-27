@@ -5,7 +5,7 @@ title:
 desc:
   zh-CN: 通过添加disabled属性可将按钮设置为不可用状态。
   en-US: Button
-author: yufangyang
+
 order: 5
 ---
 

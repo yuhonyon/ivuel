@@ -5,7 +5,7 @@ title:
 desc:
   zh-CN: 按钮组纵向排列
   en-US: Button
-author: yufangyang
+
 order: 8
 ---
 

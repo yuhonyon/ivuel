@@ -5,7 +5,7 @@ title:
 desc:
   zh-CN: 多个按钮组合
   en-US: Button
-author: yufangyang
+
 order: 7
 ---
 

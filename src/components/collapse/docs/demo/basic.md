@@ -5,7 +5,6 @@ title:
 desc:
   zh-CN: 默认可以同时展开多个面板，可以设置默认展开第几个。
   en-US: Button
-author: yufangyang
 order: 1
 ---
 

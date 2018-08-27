@@ -3,9 +3,8 @@ title:
   zh-CN: 基础使用
   en-US: Button Size
 desc:
-  zh-CN: 
+  zh-CN:
   en-US: Button
-author: yufangyang
 order: 1
 ---
 

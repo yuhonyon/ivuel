@@ -5,7 +5,7 @@ title:
 desc:
   zh-CN: 使用 v-model 可以双向绑定数据。
   en-US: Button
-author: yufangyang
+
 order: 1
 ---
 

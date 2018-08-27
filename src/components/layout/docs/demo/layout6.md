@@ -5,7 +5,7 @@ title:
 desc:
   zh-CN: Sider支持响应式布局
   en-US: Button
-author: yufangyang
+
 order: 6
 ---
 

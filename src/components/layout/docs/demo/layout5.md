@@ -5,7 +5,7 @@ title:
 desc:
   zh-CN: 要使用自定义触发器方法。
   en-US: Button
-author: yufangyang
+
 order: 5
 ---
 

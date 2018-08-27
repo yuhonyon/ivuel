@@ -5,7 +5,7 @@ title:
 desc:
   zh-CN: 通过设置属性dis-hover来禁用鼠标悬停显示阴影的效果。
   en-US: Button
-author: yufangyang
+
 order: 2
 ---
 

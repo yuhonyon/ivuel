@@ -5,7 +5,7 @@ title:
 desc:
   zh-CN: 按钮有三种尺寸：大、默认（中）、小
   en-US: Button
-author: yufangyang
+
 order: 3
 ---
 

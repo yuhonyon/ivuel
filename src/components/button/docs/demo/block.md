@@ -5,7 +5,7 @@ title:
 desc:
   zh-CN: 宽度撑满的按钮
   en-US: Button
-author: yufangyang
+
 order: 4
 ---
 

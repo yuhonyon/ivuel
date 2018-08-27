@@ -5,7 +5,7 @@ title:
 desc:
   zh-CN: 同样拥有顶部导航及侧边栏，区别是两边未留边距，多用于应用型的网站。
   en-US: Button
-author: yufangyang
+
 order: 2
 ---
 

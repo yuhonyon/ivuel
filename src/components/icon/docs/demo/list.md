@@ -5,7 +5,7 @@ title:
 desc:
   zh-CN: 支持使用第三方自定义图标
   en-US: Button
-author: yufangyang
+
 order: 2
 ---
 

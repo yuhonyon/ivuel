@@ -5,7 +5,7 @@ title:
 desc:
   zh-CN: 设置按钮形状和图标。
   en-US: Button
-author: yufangyang
+
 order: 2
 ---
 
