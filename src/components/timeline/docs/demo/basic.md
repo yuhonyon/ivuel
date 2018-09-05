@@ -1,9 +1,9 @@
 ---
 title:
-  zh-CN: 按钮尺寸
+  zh-CN: 基础用法
   en-US: Button Size
 desc:
-  zh-CN: 按钮有六种类型：主按钮、次按钮、虚线按钮、危险按钮。
+  zh-CN: 最简单定义一个时间轴的用法。
   en-US: Button
 
 order: 1
@@ -17,17 +17,38 @@ order: 1
 
 
 ```vue
+<style scoped>
+    .time{
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .content{
+        padding-left: 5px;
+    }
+</style>
 <template>
-    <Button>Default</Button>
-    <Button type="primary">Primary</Button>
-    <Button type="ghost">Ghost</Button>
-    <Button type="dashed">Dashed</Button>
-    <Button type="text">Text</Button>
-    <br><br>
-    <Button type="info">Info</Button>
-    <Button type="success">Success</Button>
-    <Button type="warning">Warning</Button>
-    <Button type="error">Error</Button>
+    <Timeline>
+        <TimelineItem>
+            <p class="time">1976年</p>
+            <p class="content">Apple I 问世</p>
+        </TimelineItem>
+        <TimelineItem>
+            <p class="time">1984年</p>
+            <p class="content">发布 Macintosh</p>
+        </TimelineItem>
+        <TimelineItem>
+            <p class="time">2007年</p>
+            <p class="content">发布 iPhone</p>
+        </TimelineItem>
+        <TimelineItem>
+            <p class="time">2010年</p>
+            <p class="content">发布 iPad</p>
+        </TimelineItem>
+        <TimelineItem>
+            <p class="time">2011年10月5日</p>
+            <p class="content">史蒂夫·乔布斯去世</p>
+        </TimelineItem>
+    </Timeline>
 </template>
 <script>
     export default {

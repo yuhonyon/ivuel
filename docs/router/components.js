@@ -322,5 +322,13 @@ export default {
             icon:'ios-star',
             path:'spin'
         },
+        {
+            name:{
+                'zh':'时间轴',
+                'en':'Timeline'
+            },
+            icon:'ios-star',
+            path:'timeline'
+        },
     ]
 };
