@@ -14,7 +14,7 @@ desc:
 
 ## API
 | 属性        | 说明    |  类型  | 默认值|
-| --------   | -----:   | :----: | :----: |
+| --------   | -----:   | ---- | ---- |
 | type        | 按钮类型，可选值为primary、ghost、dashed、text、info、success、warning、error或者不设置  |   String   | -|
 
 
@@ -22,5 +22,5 @@ desc:
 
 ## API
 | Attribute        | Explanation    |  Type  | Default|
-| --------   | -----:   | :----: | :----: |
+| --------   | -----:   | ---- | ---- |
 | type        | Button type, options include primary、ghost、dashed、text、info、success、warning、error, optional      |   String   | -|

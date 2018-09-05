@@ -1,9 +1,9 @@
 ---
 title:
-  zh-CN: 按钮尺寸
+  zh-CN: 点击上传
   en-US: Button Size
 desc:
-  zh-CN: 按钮有六种类型：主按钮、次按钮、虚线按钮、危险按钮。
+  zh-CN: 最基本用法，点击上传，一次选择一个文件。
   en-US: Button
 
 order: 1
@@ -18,16 +18,9 @@ order: 1
 
 ```vue
 <template>
-    <Button>Default</Button>
-    <Button type="primary">Primary</Button>
-    <Button type="ghost">Ghost</Button>
-    <Button type="dashed">Dashed</Button>
-    <Button type="text">Text</Button>
-    <br><br>
-    <Button type="info">Info</Button>
-    <Button type="success">Success</Button>
-    <Button type="warning">Warning</Button>
-    <Button type="error">Error</Button>
+    <Upload action="//jsonplaceholder.typicode.com/posts/">
+        <Button type="ghost" icon="ios-cloud-upload-outline">Upload files</Button>
+    </Upload>
 </template>
 <script>
     export default {

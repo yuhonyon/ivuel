@@ -1,16 +1,16 @@
 ---
 title:
-  zh-CN: 按钮尺寸
+  zh-CN: 基础用法
   en-US: Button Size
 desc:
-  zh-CN: 按钮有六种类型：主按钮、次按钮、虚线按钮、危险按钮。
+  zh-CN: 最简单的用法。
   en-US: Button
 
 order: 1
 ---
 
 # zh-CN
-
+注意 Tooltip 内的文本使用了 white-space: nowrap;，即不自动换行，如需展示很多内容并自动换行时，建议给内容 slot 增加样式 white-space: normal;。
 
 # en-US
 
@@ -18,72 +18,14 @@ order: 1
 
 ```vue
 <template>
-    <div class="top">
-        <Tooltip content="Top Left text" trigger="click" placement="top-start">
-            <Button>Top Left</Button>
-        </Tooltip>
-        <Tooltip content="Top Center text" placement="top">
-            <Button>Top Center</Button>
-        </Tooltip>
-        <Tooltip content="Top Right text" placement="top-end">
-            <Button>Top Right</Button>
-        </Tooltip>
-    </div>
-    <div class="center">
-        <div class="center-left">
-            <Tooltip content="Left Top text" placement="left-start">
-                <Button>Left Top</Button>
-            </Tooltip><br><br>
-            <Tooltip content="Left Center text" placement="left">
-                <Button>Left Center</Button>
-            </Tooltip><br><br>
-            <Tooltip content="Left Bottom text" placement="left-end">
-                <Button>Left Bottom</Button>
-            </Tooltip>
-        </div>
-        <div class="center-right">
-            <Tooltip content="Right Top text" placement="right-start">
-                <Button>Right Top</Button>
-            </Tooltip><br><br>
-            <Tooltip content="Right Center text" placement="right">
-                <Button>Right Center</Button>
-            </Tooltip><br><br>
-            <Tooltip content="Right Bottom text" placement="right-end">
-                <Button>Right Bottom</Button>
-            </Tooltip>
-        </div>
-    </div>
-    <div class="bottom">
-        <Tooltip content="Bottom Left text" placement="bottom-start">
-            <Button>Bottom Left</Button>
-        </Tooltip>
-        <Tooltip content="Bottom Center text" placement="bottom">
-            <Button>Bottom Center</Button>
-        </Tooltip>
-        <Tooltip content="Bottom Right text" placement="bottom-end">
-            <Button>Bottom Right</Button>
-        </Tooltip>
-    </div>
+    <Tooltip content="Here is the prompt text">
+        A balloon appears when the mouse passes over this text
+    </Tooltip>
 </template>
 <script>
     export default {
 
     }
 </script>
-<style scoped>
-    .top,.bottom{
-        text-align: center;
-    }
-    .center{
-        width: 300px;
-        margin: 10px auto;
-        overflow: hidden;
-    }
-    .center-left{
-        float: left;
-    }
-    .center-right{
-        float: right;
-    }
-</style>
+
 ```
