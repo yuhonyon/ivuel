@@ -1,12 +1,17 @@
 const getReference = (el, binding, vnode) => {
     const _ref = binding.expression ? binding.value : binding.arg;
-    const popper = vnode.context.$refs[_ref];
+    let popper = vnode.context.$refs[_ref];
     if (popper) {
         if (Array.isArray(popper)) {
-            popper[0].$refs.reference = el;
-        } else {
-            popper.$refs.reference = el;
+            popper=popper[0];
         }
+        let parentNode=popper.$refs.reference.parentNode;
+        if(popper.transfer){
+            parentNode.parentNode.removeChild(parentNode);
+        }else{
+            parentNode.removeChild(popper.$refs.reference);
+        }
+        popper.$refs.reference = el;
     }
 };
 

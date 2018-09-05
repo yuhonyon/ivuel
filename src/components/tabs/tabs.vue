@@ -223,7 +223,7 @@
                     tab.heightTimer=setTimeout(()=>{
                       tab.$el.style.height=0
                       tab.$el.style.visibility='hidden'
-                    },300)
+                    },transitionTime)
                   }
                   tab.show=isActive||this.animated;
                 });
@@ -393,16 +393,16 @@
                 return false;
             },
             updateVisibility(index){
-                [...this.$refs.panes.children].forEach((el, i) => {
-                    if (index === i) {
-                        [...el.children].forEach(child => child.style.visibility = 'visible');
-                        if (this.captureFocus) setTimeout(() => focusFirst(el, el), transitionTime);
-                    } else {
-                        setTimeout(() => {
-                            [...el.children].forEach(child => child.style.visibility = 'hidden');
-                        }, transitionTime);
-                    }
-                });
+                // [...this.$refs.panes.children].forEach((el, i) => {
+                //     if (index === i) {
+                //         [...el.children].forEach(child => child.style.visibility = 'visible');
+                //         if (this.captureFocus) setTimeout(() => focusFirst(el, el), transitionTime);
+                //     } else {
+                //         setTimeout(() => {
+                //             [...el.children].forEach(child => child.style.visibility = 'hidden');
+                //         }, transitionTime);
+                //     }
+                // });
             }
         },
         watch: {

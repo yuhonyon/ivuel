@@ -91,6 +91,9 @@
                     this.currentValue = this.value;
                     this.updateValue();
                 }
+            },
+            disabled (){
+              this.updateValue()
             }
         }
     };

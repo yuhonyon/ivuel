@@ -18,8 +18,8 @@ order: 2
 
 ```vue
 <template>
-    <Button v-poptip='"aaa"' >Hover</Button>
-    <Poptip ref="aaa" trigger="hover" title="Title" content="content"></Poptip>
+    <Button v-poptip='"aaa"' >Click</Button>
+    <Poptip ref="aaa" trigger="click" transfer title="Title" content="content"></Poptip>
 
 </template>
 <script>

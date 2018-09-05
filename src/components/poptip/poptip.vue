@@ -7,7 +7,6 @@
         <div
             :class="[prefixCls + '-rel']"
             ref="reference"
-            @click="handleClick"
             @mousedown="handleFocus(false)"
             @mouseup="handleBlur(false)">
             <slot></slot>

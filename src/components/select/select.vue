@@ -425,7 +425,7 @@
             getInitialValue(){
                 const {multiple, remote, value} = this;
                 let initialValue = Array.isArray(value) ? value : [value];
-                if (!multiple && (typeof initialValue[0] === 'undefined' || (typeof initialValue[0] !== 'boolean'&&String(initialValue[0]).trim() !== ''&&!Number.isFinite(initialValue[0])))) initialValue = [];
+                if (!multiple && (typeof initialValue[0] === 'undefined' ||initialValue[0]===null)) initialValue = [];
                 if (remote && !multiple && value&&value!=='') {
                     const data = this.getOptionData(value);
                     this.query = data ? data.label : String(value);

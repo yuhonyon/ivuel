@@ -73,6 +73,9 @@
         watch: {
             value () {
                 this.updateModel(true);
+            },
+            disabled (){
+              this.updateModel()
             }
         }
     };

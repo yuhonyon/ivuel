@@ -19,7 +19,7 @@ order: 1
 ```vue
 <template>
     <Select v-model="model1" style="width:200px" @on-change="handlerChanged" @on-select="handlerSelected">
-        <Option value="" >空选项</Option>
+
         <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
     </Select>
 </template>
@@ -49,11 +49,11 @@ order: 1
                         label: 'Paris1'
                     },
                     {
-                        value: 'Canberra',
+                        value:"",
                         label: 'Canberra1'
                     }
                 ],
-                model1: true
+                model1:""
             }
         },
         methods: {
