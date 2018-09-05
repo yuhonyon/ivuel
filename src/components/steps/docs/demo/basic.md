@@ -1,9 +1,9 @@
 ---
 title:
-  zh-CN: 按钮尺寸
+  zh-CN: 基础用法
   en-US: Button Size
 desc:
-  zh-CN: 按钮有六种类型：主按钮、次按钮、虚线按钮、危险按钮。
+  zh-CN:
   en-US: Button
 
 order: 1
@@ -11,27 +11,24 @@ order: 1
 
 # zh-CN
 
-
+基本用法，组件会根据current自动判断各步骤状态。
 # en-US
 
 
 
 ```vue
 <template>
-    <Button>Default</Button>
-    <Button type="primary">Primary</Button>
-    <Button type="ghost">Ghost</Button>
-    <Button type="dashed">Dashed</Button>
-    <Button type="text">Text</Button>
-    <br><br>
-    <Button type="info">Info</Button>
-    <Button type="success">Success</Button>
-    <Button type="warning">Warning</Button>
-    <Button type="error">Error</Button>
+    <Steps :current="1">
+        <Step title="已完成" content="这里是该步骤的描述信息"></Step>
+        <Step title="进行中" content="这里是该步骤的描述信息"></Step>
+        <Step title="待进行" content="这里是该步骤的描述信息"></Step>
+        <Step title="待进行" content="这里是该步骤的描述信息"></Step>
+    </Steps>
 </template>
 <script>
     export default {
 
     }
 </script>
+
 ```

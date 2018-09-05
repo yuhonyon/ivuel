@@ -1,9 +1,9 @@
 ---
 title:
-  zh-CN: Button 按钮
+  zh-CN: BackTop 返回顶部
   en-US: Button
 desc:
-  zh-CN: 基础组件，触发业务逻辑时使用。
+  zh-CN: 当页面内容冗长，需要快捷返回顶部时使用，一般放置在页面右下角位置
   en-US: Basic component that is used to trigger bussiness logic.
 ---
 
@@ -11,9 +11,19 @@ desc:
 # zh-CN
 
 ## API
-| 属性        | 说明    |  类型  | 默认值|
-| --------   | -----:   | ---- | ---- |
-| type        | 按钮类型，可选值为primary、ghost、dashed、text、info、success、warning、error或者不设置  |   String   | -|
+
+| 属性 |说明 |类型 |默认值 |
+| --- |--- |--- |--- |
+| height |页面滚动高度达到该值时才显示BackTop组件 |Number |400 |
+| bottom |组件距离底部的距离 |Number |30 |
+| right |组件距离右部的距离 |Number |30 |
+| duration |滚动动画持续时间，单位 毫秒 |Number |1000 |
+
+
+
+| 事件名 |说明 |返回值 |
+| --- |--- |--- |
+| on-click |点击按钮时触发 |无 |
 
 
 # en-US

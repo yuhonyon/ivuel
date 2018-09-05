@@ -1,16 +1,20 @@
 ---
 title:
-  zh-CN: 按钮尺寸
+  zh-CN: 顶部导航
   en-US: Button Size
 desc:
-  zh-CN: 按钮有六种类型：主按钮、次按钮、虚线按钮、危险按钮。
+  zh-CN: 
   en-US: Button
 
 order: 1
 ---
 
 # zh-CN
+水平的顶部导航菜单。
 
+通过设置属性 theme 为 light、dark、primary 可以选择主题。
+
+通过事件 on-select 可以得到点击菜单的 name 值，从而控制页面路由或自定义操作。
 
 # en-US
 
@@ -18,40 +22,51 @@ order: 1
 
 ```vue
 <template>
-    <Menu collapse active-name="1-2" >
-        <Submenu name="1" tooltip="Navigation1">
+    <Menu mode="horizontal" :theme="theme1" active-name="1">
+        <MenuItem name="1">
+            <Icon type="ios-paper"></Icon>
+            内容管理
+        </MenuItem>
+        <MenuItem name="2">
+            <Icon type="ios-people"></Icon>
+            用户管理
+        </MenuItem>
+        <Submenu name="3">
             <template slot="title">
-                <Icon type="ios-analytics"></Icon>
-                <span>Navigation One</span>
+                <Icon type="stats-bars"></Icon>
+                统计分析
             </template>
-            <MenuGroup title="Item 1">
-                <MenuItem name="1-1">Option 1</MenuItem>
-                <MenuItem name="1-2">Option 2</MenuItem>
+            <MenuGroup title="使用">
+                <MenuItem name="3-1">新增和启动</MenuItem>
+                <MenuItem name="3-2">活跃分析</MenuItem>
+                <MenuItem name="3-3">时段分析</MenuItem>
             </MenuGroup>
-            <MenuGroup title="Item 2">
-                <MenuItem name="1-3">Option 3</MenuItem>
-                <MenuItem name="1-4">Option 4</MenuItem>
+            <MenuGroup title="留存">
+                <MenuItem name="3-4">用户留存</MenuItem>
+                <MenuItem name="3-5">流失用户</MenuItem>
             </MenuGroup>
         </Submenu>
-        <Submenu name="2" tooltip="Navigation2">
-            <template slot="title">
-                <Icon type="ios-filing"></Icon>
-                <span>Navigation 2</span>
-            </template>
-            <MenuItem name="2-1">Option 5</MenuItem>
-            <MenuItem name="2-2">Option 6</MenuItem>
-            <Submenu name="3">
-                <template slot="title">Submenu</template>
-                <MenuItem name="3-1">Option 7</MenuItem>
-                <MenuItem name="3-2">Option 8</MenuItem>
-            </Submenu>
-        </Submenu>
-        <MenuItem tooltip="Navigation" name="4-4"><Icon type="ios-filing"></Icon><span>菜单</span></MenuItem>
+        <MenuItem name="4">
+            <Icon type="settings"></Icon>
+            综合设置
+        </MenuItem>
     </Menu>
+    <br>
+    <p>Change theme</p>
+    <RadioGroup v-model="theme1">
+        <Radio label="light"></Radio>
+        <Radio label="dark"></Radio>
+        <Radio label="primary"></Radio>
+    </RadioGroup>
 </template>
 <script>
     export default {
-
+        data () {
+            return {
+                theme1: 'light'
+            }
+        }
     }
 </script>
+
 ```

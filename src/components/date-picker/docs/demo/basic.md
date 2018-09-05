@@ -1,9 +1,9 @@
 ---
 title:
-  zh-CN: 按钮尺寸
+  zh-CN: 基础使用
   en-US: Button Size
 desc:
-  zh-CN: 按钮有六种类型：主按钮、次按钮、虚线按钮、危险按钮。
+  zh-CN: 以「日」为基本单位，基础的日期选择控件
   en-US: Button
 
 order: 1

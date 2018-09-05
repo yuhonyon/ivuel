@@ -1,9 +1,9 @@
 ---
 title:
-  zh-CN: 按钮尺寸
+  zh-CN: 基本使用
   en-US: Button Size
 desc:
-  zh-CN: 按钮有六种类型：主按钮、次按钮、虚线按钮、危险按钮。
+  zh-CN: 基本的分页，页数过多时会自动折叠
   en-US: Button
 
 order: 1
@@ -18,11 +18,12 @@ order: 1
 
 ```vue
 <template>
-    <Page :total="100" />
+    <Page :total="100"></Page>
 </template>
 <script>
     export default {
 
     }
 </script>
+
 ```

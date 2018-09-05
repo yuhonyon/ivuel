@@ -1,12 +1,12 @@
 ---
 title:
-  zh-CN: 按钮尺寸
+  zh-CN: 选择日期范围
   en-US: Button Size
 desc:
-  zh-CN: 按钮有六种类型：主按钮、次按钮、虚线按钮、危险按钮。
+  zh-CN: 可在一个选择器中便捷地选择一个时间范围
   en-US: Button
 
-order: 1
+order: 33
 ---
 
 # zh-CN

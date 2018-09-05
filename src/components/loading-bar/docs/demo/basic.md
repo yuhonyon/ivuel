@@ -1,16 +1,16 @@
 ---
 title:
-  zh-CN: 按钮尺寸
+  zh-CN: 基本用法
   en-US: Button Size
 desc:
-  zh-CN: 按钮有六种类型：主按钮、次按钮、虚线按钮、危险按钮。
+  zh-CN:
   en-US: Button
 
 order: 1
 ---
 
 # zh-CN
-
+点击 Start 开始进度，点击 Finish 结束。在调用start()方法后，组件会自动模拟进度，当调用finish()或error()时，补全进度并自动消失。
 
 # en-US
 
@@ -18,20 +18,24 @@ order: 1
 
 ```vue
 <template>
-    <Button>Default</Button>
-    <Button type="primary">Primary</Button>
-    <Button type="ghost">Ghost</Button>
-    <Button type="dashed">Dashed</Button>
-    <Button type="text">Text</Button>
-    <br><br>
-    <Button type="info">Info</Button>
-    <Button type="success">Success</Button>
-    <Button type="warning">Warning</Button>
-    <Button type="error">Error</Button>
+    <Button @click="start">Start</Button>
+    <Button @click="finish">Finish</Button>
+    <Button @click="error">Error</Button>
 </template>
 <script>
     export default {
-
+        methods: {
+            start () {
+                this.$Loading.start();
+            },
+            finish () {
+                this.$Loading.finish();
+            },
+            error () {
+                this.$Loading.error();
+            }
+        }
     }
 </script>
+
 ```

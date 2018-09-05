@@ -130,7 +130,7 @@
                 return `${prefixCls}`;
             },
             wrapStyles(){
-              return {'top':typeof this.vertical==='number'?this.vertical:0,'zIndex':this.zIndex}
+              return {'top':typeof this.vertical==='number'?this.vertical+"px":0,'zIndex':this.zIndex}
             },
             maskStyles(){
               return {'zIndex':this.zIndex}

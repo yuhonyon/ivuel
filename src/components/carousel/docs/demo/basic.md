@@ -1,9 +1,9 @@
 ---
 title:
-  zh-CN: 按钮尺寸
+  zh-CN: 基础使用
   en-US: Button Size
 desc:
-  zh-CN: 按钮有六种类型：主按钮、次按钮、虚线按钮、危险按钮。
+  zh-CN:
   en-US: Button
 
 order: 1
@@ -18,20 +18,29 @@ order: 1
 
 ```vue
 <template>
-    <Button>Default</Button>
-    <Button type="primary">Primary</Button>
-    <Button type="ghost">Ghost</Button>
-    <Button type="dashed">Dashed</Button>
-    <Button type="text">Text</Button>
-    <br><br>
-    <Button type="info">Info</Button>
-    <Button type="success">Success</Button>
-    <Button type="warning">Warning</Button>
-    <Button type="error">Error</Button>
+    <Carousel v-model="value1" loop>
+        <CarouselItem>
+            <div class="demo-carousel">1</div>
+        </CarouselItem>
+        <CarouselItem>
+            <div class="demo-carousel">2</div>
+        </CarouselItem>
+        <CarouselItem>
+            <div class="demo-carousel">3</div>
+        </CarouselItem>
+        <CarouselItem>
+            <div class="demo-carousel">4</div>
+        </CarouselItem>
+    </Carousel>
 </template>
 <script>
     export default {
-
+        data () {
+            return {
+                value1: 0
+            }
+        }
     }
 </script>
+
 ```

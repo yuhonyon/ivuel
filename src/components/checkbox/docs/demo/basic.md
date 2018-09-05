@@ -3,7 +3,7 @@ title:
   zh-CN: 单独使用
   en-US: Button Size
 desc:
-  zh-CN: 按钮有六种类型：主按钮、次按钮、虚线按钮、危险按钮。
+  zh-CN: 使用 v-model 可以双向绑定数据。
   en-US: Button
 
 order: 1
@@ -29,5 +29,6 @@ order: 1
         }
     }
 </script>
+
 
 ```

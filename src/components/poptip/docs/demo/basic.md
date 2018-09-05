@@ -1,16 +1,16 @@
 ---
 title:
-  zh-CN: 按钮尺寸
+  zh-CN: 基础用法
   en-US: Button Size
 desc:
-  zh-CN: 按钮有六种类型：主按钮、次按钮、虚线按钮、危险按钮。
+  zh-CN: 支持三种触发方式：鼠标悬停、点击、聚焦。默认是点击。
   en-US: Button
 
 order: 1
 ---
 
 # zh-CN
-
+注意 Poptip 内的文本使用了 white-space: nowrap;，即不自动换行，如需展示很多内容并自动换行时，建议给内容 slot 增加样式 white-space: normal;。
 
 # en-US
 
@@ -36,4 +36,5 @@ order: 1
 
     }
 </script>
+
 ```

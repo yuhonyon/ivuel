@@ -3,13 +3,14 @@ title:
   zh-CN: 基础使用
   en-US: Button Size
 desc:
-  zh-CN: 
+  zh-CN: 普通组件使用方法
   en-US: Button
-author: yufangyang
 order: 1
 ---
 
 # zh-CN
+
+最简单的使用方法，通过控制属性visible来显示 / 隐藏对话框。
 
 可以使用 v-model 实现双向绑定。
 
@@ -49,5 +50,6 @@ order: 1
         }
     }
 </script>
+
 
 ```

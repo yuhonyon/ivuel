@@ -146,6 +146,66 @@ export default {
             icon:'ios-star',
             path:'tree'
         },
+        {
+            name:{
+                'zh':'Spin',
+                'en':'Spin'
+            },
+            icon:'ios-star',
+            path:'spin'
+        },
+        {
+            name:{
+                'zh':'时间轴',
+                'en':'Timeline'
+            },
+            icon:'ios-star',
+            path:'timeline'
+        },
+        {
+            name:{
+                'zh':'Alert',
+                'en':'Alert'
+            },
+            icon:'ios-star',
+            path:'alert'
+        },{
+            name:{
+                'zh':'Badge',
+                'en':'Badge'
+            },
+            icon:'ios-star',
+            path:'badge'
+        },{
+            name:{
+                'zh':'Breadcrumb',
+                'en':'Breadcrumb'
+            },
+            icon:'ios-star',
+            path:'breadcrumb'
+        },{
+            name:{
+                'zh':'Carousel',
+                'en':'Carousel'
+            },
+            icon:'ios-star',
+            path:'carousel'
+        },{
+            name:{
+                'zh':'Circle',
+                'en':'Circle'
+            },
+            icon:'ios-star',
+            path:'circle'
+        },
+        {
+            name:{
+                'zh':'Avatar',
+                'en':'Avatar'
+            },
+            icon:'ios-star',
+            path:'avatar'
+        }
 
     ],
     form:[
@@ -156,6 +216,14 @@ export default {
             },
             icon:'ios-star',
             path:'input'
+        },
+        {
+            name:{
+                'zh':'AutoComplete',
+                'en':'AutoComplete'
+            },
+            icon:'ios-star',
+            path:'auto-complete'
         },
         {
             name:{
@@ -191,11 +259,26 @@ export default {
         },
         {
             name:{
+                'zh':'Cascader',
+                'en':'Cascader'
+            },
+            icon:'ios-star',
+            path:'cascader'
+        },
+        {
+            name:{
                 'zh':'DatePicker',
                 'en':'DatePicker'
             },
             icon:'ios-star',
             path:'date-picker'
+        },{
+            name:{
+                'zh':'TimePicker',
+                'en':'TimePicker'
+            },
+            icon:'ios-star',
+            path:'time-picker'
         },
         {
             name:{
@@ -314,21 +397,28 @@ export default {
         },
     ],
     other:[
+
         {
             name:{
-                'zh':'Spin',
-                'en':'Spin'
+                'zh':'Affix',
+                'en':'Affix'
             },
             icon:'ios-star',
-            path:'spin'
-        },
-        {
+            path:'affix'
+        },{
             name:{
-                'zh':'时间轴',
-                'en':'Timeline'
+                'zh':'BackTop',
+                'en':'BackTop'
             },
             icon:'ios-star',
-            path:'timeline'
+            path:'back-top'
+        },{
+            name:{
+                'zh':'Scroll',
+                'en':'Scroll'
+            },
+            icon:'ios-star',
+            path:'scroll'
         },
     ]
 };

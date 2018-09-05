@@ -1,16 +1,18 @@
 ---
 title:
-  zh-CN: 按钮尺寸
+  zh-CN: 底部触发
   en-US: Button Size
 desc:
-  zh-CN: 按钮有六种类型：主按钮、次按钮、虚线按钮、危险按钮。
+  zh-CN: 
   en-US: Button
 
 order: 1
 ---
 
 # zh-CN
+当滚动至底部时，触发加载更多。
 
+需返回 Promise。
 
 # en-US
 
@@ -18,20 +20,33 @@ order: 1
 
 ```vue
 <template>
-    <Button>Default</Button>
-    <Button type="primary">Primary</Button>
-    <Button type="ghost">Ghost</Button>
-    <Button type="dashed">Dashed</Button>
-    <Button type="text">Text</Button>
-    <br><br>
-    <Button type="info">Info</Button>
-    <Button type="success">Success</Button>
-    <Button type="warning">Warning</Button>
-    <Button type="error">Error</Button>
+    <Scroll :on-reach-bottom="handleReachBottom">
+        <Card dis-hover v-for="(item, index) in list1" :key="index" style="margin: 32px 0">
+            Content {{ item }}
+        </Card>
+    </Scroll>
 </template>
 <script>
     export default {
-
+        data () {
+            return {
+                list1: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            }
+        },
+        methods: {
+            handleReachBottom () {
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                        const last = this.list1[this.list1.length - 1];
+                        for (let i = 1; i < 11; i++) {
+                            this.list1.push(last + i);
+                        }
+                        resolve();
+                    }, 2000);
+                });
+            }
+        }
     }
 </script>
+
 ```

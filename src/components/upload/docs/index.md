@@ -1,9 +1,9 @@
 ---
 title:
-  zh-CN: Button 按钮
+  zh-CN: Upload 上传
   en-US: Button
 desc:
-  zh-CN: 基础组件，触发业务逻辑时使用。
+  zh-CN: 文件选择上传和拖拽上传控件。
   en-US: Basic component that is used to trigger bussiness logic.
 ---
 

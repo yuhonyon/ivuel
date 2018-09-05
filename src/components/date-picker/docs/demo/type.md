@@ -1,12 +1,12 @@
 ---
 title:
-  zh-CN: 按钮尺寸
+  zh-CN: 其他日期单位
   en-US: Button Size
 desc:
-  zh-CN: 按钮有六种类型：主按钮、次按钮、虚线按钮、危险按钮。
+  zh-CN: 通过扩展基础的日期选择，可以选择周、月、年或多个日期
   en-US: Button
 
-order: 1
+order: 11
 ---
 
 # zh-CN

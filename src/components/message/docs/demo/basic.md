@@ -1,9 +1,9 @@
 ---
 title:
-  zh-CN: 按钮尺寸
+  zh-CN: 基本使用
   en-US: Button Size
 desc:
-  zh-CN: 按钮有六种类型：主按钮、次按钮、虚线按钮、危险按钮。
+  zh-CN: 最基本的提示，默认在1.5秒后消失。
   en-US: Button
 
 order: 1
@@ -18,20 +18,16 @@ order: 1
 
 ```vue
 <template>
-    <Button>Default</Button>
-    <Button type="primary">Primary</Button>
-    <Button type="ghost">Ghost</Button>
-    <Button type="dashed">Dashed</Button>
-    <Button type="text">Text</Button>
-    <br><br>
-    <Button type="info">Info</Button>
-    <Button type="success">Success</Button>
-    <Button type="warning">Warning</Button>
-    <Button type="error">Error</Button>
+    <Button type="primary" @click="info">Display info prompt</Button>
 </template>
 <script>
     export default {
-
+        methods: {
+            info () {
+                this.$Message.info('This is a info tip');
+            }
+        }
     }
 </script>
+
 ```

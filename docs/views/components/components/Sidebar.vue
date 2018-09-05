@@ -7,7 +7,7 @@
       <MenuItem name="/doc/i18n"><Icon type="ios-star"></Icon><span>国际化</span></MenuItem>
       <MenuItem name="/doc/theme"><Icon type="ios-star"></Icon><span>自定义主题</span></MenuItem>
       <h3>组件</h3>
-      <MenuGroup v-for="(group,index) in components" :key="index" title="Basic">
+      <MenuGroup v-for="(group,index) in components" :key="index" :title="index">
           <MenuItem v-for="item in group" :key="item.path" :tooltip="item.name.zh" :name="`/components/${item.path}`"><Icon :type="item.icon"></Icon><span>{{item.name.zh}}</span></MenuItem>
       </MenuGroup>
 

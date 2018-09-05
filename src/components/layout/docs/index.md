@@ -48,9 +48,39 @@ desc:
 * Footer：底部布局，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中。
 
 ## API
-| 属性        | 说明    |  类型  | 默认值|
-| --------   | -----:   | ---- | ---- |
-| type        | 按钮类型，可选值为primary、ghost、dashed、text、info、success、warning、error或者不设置  |   String   | -|
+
+
+Sider props
+
+| 属性 |说明 |类型 |默认值 |
+| --- |--- |--- |--- |
+| breakpoint |触发响应式布局的断点，可选值为xs,sm,md,lg,xl或xxl，若不设此属性则不会触发响应式布局。 |String |- |
+| value |侧边栏是否收起，可使用 v-model 双向绑定数据。 |Boolean |false |
+| width |宽度 |Number |200 |
+| collapsible |是否可收起，设为false后，默认触发器会隐藏，且响应式布局不会触发 |Boolean |false |
+| collapsed-width |收缩宽度，设置为 0 会出现特殊 trigger |Number |64 |
+| hide-trigger |隐藏默认触发器 |Boolean |false |
+| default-collapsed |是否默认收起，设置了collapsible后设置此属性侧边栏仍会收起。 |Boolean |false |
+| reverse-arrow |改变侧边栏触发器箭头方向，和改变侧边栏收起方向，当Sider在右边时可以使用。 |Boolean |false |
+
+
+Sider events
+
+| 事件名 |说明 |返回值 |
+| --- |--- |--- |
+| on-collapse |展开-收起时的回调 |true / false |
+
+Sider slot
+
+| 名称 |说明 |
+| --- |--- |
+| trigger |自定义触发器 |
+
+Sider methods
+
+| 方法名 |说明 |
+| --- |--- |
+| toggleCollapse |改变Sider展开-收起状态。 |
 
 
 # en-US
