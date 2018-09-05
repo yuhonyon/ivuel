@@ -31,6 +31,7 @@ desc:
 | editable |是否可编辑 |Boolean |true |
 | precision |数值精度 |Number |- |
 | element-id |给表单元素设置 id，详见 Form 用法。 |String |- |
+| plusminus | 风格  | boolean | true |
 
 ### InputNumber events
 

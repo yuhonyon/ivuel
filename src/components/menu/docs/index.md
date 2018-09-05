@@ -21,6 +21,8 @@ desc:
 | open-names |展开的 Submenu 的 name 集合 |Array |[] |
 | accordion |是否开启手风琴模式，开启后每次至多展开一个子菜单 |Boolean |false |
 | width |导航菜单的宽度，只在 mode="vertical" 时有效，如果使用 Col 等布局，建议设置为 auto |String |240px |
+| collapse | 是否开启collapse功能 | boolean | false |
+| router | 是否开启router功能 | boolean | false |
 
 ### Menu events
 
@@ -41,13 +43,13 @@ desc:
 | 属性 |说明 |类型 |默认值 |
 | --- |--- |--- |--- |
 | name |菜单项的唯一标识，必填 |String / Number |- |
-
+| tooltip | 收起后提示内容 | string |  -   |
 ### Submenu props
 
 | 属性 |说明 |类型 |默认值 |
 | --- |--- |--- |--- |
 | name |子菜单的唯一标识，必填 |String / Number |- |
-
+| tooltip | 收起后提示内容 | string |  -   |
 ### Submenu slot
 
 | 名称 |说明 |

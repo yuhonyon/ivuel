@@ -60,6 +60,9 @@ desc:
 | unlink-panels |在范围选择器里取消两个日期面板之间的联动 |boolean |— |false |
 | prefix-icon |自定义头部图标的类名 |string |— |el-icon-date |
 | clear-icon |自定义清空图标的类名 |string |— |el-icon-circle-close |
+| maxDate | 可选最大值,可取值('today'或date) | string/date | date/'today' | null |
+| minDate | 可选最小值,可取值('today'或date) | string/date | date/'today' | null |
+
 
 ### DatePicker Options
 

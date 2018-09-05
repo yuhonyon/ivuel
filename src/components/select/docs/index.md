@@ -43,6 +43,7 @@ desc:
 | on-query-change |搜索词改变时触发 |query |
 | on-clear |点击清空按钮时触发 |无 |
 | on-open-change |下拉框展开或收起时触发 |true / false |
+| on-select |手动选中的Option变化时触发 |当前选中项 |
 
 ### Select methods
 

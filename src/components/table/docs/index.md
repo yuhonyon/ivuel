@@ -42,7 +42,8 @@ desc:
 | sum-text | 合计行第一列的文本 | String | — | 合计 |
 | summary-method | 自定义的合计计算方法 | Function({ columns, data }) | — | — |
 | span-method | 合并行或列的计算方法 | Function({ row, column, rowIndex, columnIndex }) | — | — |
-
+|    align    | 对齐方式center left right | string | — | left |
+| headerAlign | 对齐方式center left right | string | — | left |
 ### Table Events
 | 事件名 | 说明 | 参数 |
 | ---- | ---- | ---- |
@@ -73,7 +74,7 @@ desc:
 | clearSort | 用于清空排序条件，数据会恢复成未排序的状态 | — |
 | clearFilter | 用于清空过滤条件，数据会恢复成未过滤的状态 | — |
 | doLayout | 对 Table 进行重新布局。当 Table 或其祖先元素由隐藏切换为显示时，可能需要调用此方法 | — |
-
+| confirmFilter | 过滤方法 | columnId,filteredValue |
 ### Table Slot
 | name | 说明 |
 |------|--------|

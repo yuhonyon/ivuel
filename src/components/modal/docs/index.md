@@ -33,6 +33,7 @@ order: 1
 | z-index |层级 |Number |1000 |
 | transition-names |自定义显示动画，第一项是模态框，第二项是背景 |Array |['ease', 'fade'] |
 | transfer |是否将弹层放置于 body 内 |Boolean |true |
+| position | 纵向位置可取值("center"和数值) | string/number | "center" |
 
 ### Modal events
 

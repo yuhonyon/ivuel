@@ -31,7 +31,8 @@ Poptip 还 confirm 确认框，与 Modal 不同的是，它会出现在就近元
 | transfer |是否将弹层放置于 body 内，在 Tabs、带有 fixed 的 Table 列内使用时，建议添加此属性，它将不受父级样式影响，从而达到更好的效果 |Boolean |false |
 | popper-class |给 Poptip 设置 class-name，在使用 transfer 时会很有用 |String |- |
 | options |自定义 popper.js 的配置项，具体配置见 popper.js 文档 |Object |{ modifiers: { computeStyle:{ gpuAcceleration: false, }, preventOverflow :{ boundariesElement: 'window' } } } |
-
+|   disabled  | 是否禁用        | boolean | false |
+| poptipClass | 为poptip添加类名 |  string |   -    |
 ### Poptip events
 | 事件名 |说明 |返回值 |
 | --- |--- |--- |

@@ -39,7 +39,7 @@ desc:
 | type |可选值为 button 或不填，为 button 时使用按钮样式 |String |- |
 | size |尺寸，可选值为large、small、default或者不设置 |String |- |
 | vertical |是否垂直排列，按钮样式下无效 |Boolean |false |
-
+| disabled | 禁用  | boolean | false |
 
 ### RadioGroup events
 

@@ -26,7 +26,8 @@ desc:
 | always    | 是否总是可见                                                                                                                                          | Boolean         | false  |
 | transfer  | 是否将弹层放置于 body 内，在 Tabs、带有 fixed 的 Table 列内使用时，建议添加此属性，它将不受父级样式影响，从而达到更好的效果                           | Boolean         | false  |
 | options   | 自定义 popper.js 的配置项，具体配置见 popper.js 文档                                                                                                  | Object          | |
-
+|   disabled   | 是否禁用         | boolean | false |
+| tooltipClass | 为tooltip添加类名 |  string |       |
 属性：options
 
 #### 自定义 popper.js 的配置项，具体配置见 popper.js 文档

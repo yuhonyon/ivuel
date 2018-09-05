@@ -23,6 +23,7 @@ export default new Router({
             path: '/',
             name: 'Layout',
             component: Layout,
+            redirect: '/doc/install',
             children: [
                 {
                     path: '/components',

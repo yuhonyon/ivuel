@@ -38,6 +38,7 @@ desc:
 | --- |--- |--- |--- |
 | value |指定选中项目的集合，可以使用 v-model 双向绑定数据 |Array |[] |
 | size |多选框组的尺寸，可选值为 large、small、default 或者不设置 |String |- |
+| disabled | 禁用  | boolean | false |
 
 ### CheckboxGroup events
 
