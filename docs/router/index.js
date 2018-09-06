@@ -17,7 +17,7 @@ for (let group in components) {
 Vue.use(Router);
 
 export default new Router({
-    mode: 'hash',
+    mode: 'history',
     routes: [
         {
             path: '/',
