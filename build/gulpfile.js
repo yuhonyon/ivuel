@@ -33,7 +33,7 @@ gulp.task('less', function () {
         .pipe($.less())
         .pipe($.postcss(processors))
         //.pipe($.cleanCSS())
-        .pipe($.rename('iview.css'))
+        .pipe($.rename('ivuel.css'))
         .pipe($.sourcemaps.write('.'))
         .pipe(gulp.dest('../dist/styles'));
 });
