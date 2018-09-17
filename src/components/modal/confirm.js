@@ -7,7 +7,6 @@ const prefixCls = 'ivu-modal-confirm';
 
 Modal.newInstance = properties => {
     const _props = properties || {};
-
     const Instance = new Vue({
         mixins: [ Locale ],
         data: Object.assign({}, _props, {
@@ -23,7 +22,8 @@ Modal.newInstance = properties => {
             loading: false,
             buttonLoading: false,
             scrollable: false,
-            closable: false
+            closable: false,
+            extraBtn:null
         }),
         render (h) {
             let footerVNodes = [];
@@ -38,6 +38,30 @@ Modal.newInstance = properties => {
                     }
                 }, this.localeCancelText));
             }
+            if(this.extraBtn){
+                this.extraBtn.forEach(btn=>{
+                    footerVNodes.push(h(Button, {
+                        props: {
+                            type: btn.type||'primary',
+                            size: 'large',
+                            loading: this.buttonLoading
+                        },
+                        on: {
+                            click: ()=>{
+                                if (this.loading) {
+                                    this.buttonLoading = true;
+                                } else {
+                                    this.$children[0].visible = false;
+                                    this.remove();
+                                }
+                                btn.onOk();
+                            }
+                        }
+                    }, btn.name));
+                });
+            }
+
+
             footerVNodes.push(h(Button, {
                 props: {
                     type: 'primary',
@@ -222,6 +246,10 @@ Modal.newInstance = properties => {
 
             if ('content' in props) {
                 modal.$parent.body = props.content;
+            }
+
+            if ('extraBtn' in props) {
+                modal.$parent.extraBtn = props.extraBtn;
             }
 
             if ('okText' in props) {

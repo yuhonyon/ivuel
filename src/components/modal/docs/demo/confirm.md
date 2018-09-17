@@ -41,6 +41,7 @@ order: 55
                     title: 'Title',
                     content: '<p>Content of dialog</p><p>Content of dialog</p>',
                     okText: 'OK',
+                    extraBtn:[{name:"按钮2",onOk:()=>{alert(9)}}],
                     cancelText: 'Cancel'
                 });
             },

@@ -18,7 +18,7 @@ order: 1
 
 ```vue
 <template>
-    <Switch v-model="switch1" @on-change="change"></Switch>
+    <i-switch v-model="switch1" @on-change="change"></i-switch>
 </template>
 <script>
     export default {

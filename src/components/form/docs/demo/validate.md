@@ -23,6 +23,9 @@ Form 组件基于  async-validator 实现的数据验证，给 Form 设置属性
 ```vue
 <template>
     <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="80">
+        <FormItem label="Age" prop="age">
+            <Input number v-model="formValidate.age" placeholder="Enter your age"></Input>
+        </FormItem>
         <FormItem label="Name" prop="name">
             <Input v-model="formValidate.name" placeholder="Enter your name"></Input>
         </FormItem>
@@ -79,6 +82,7 @@ Form 组件基于  async-validator 实现的数据验证，给 Form 设置属性
         data () {
             return {
                 formValidate: {
+                    age:1,
                     name: '',
                     mail: '',
                     city: '',
@@ -89,6 +93,9 @@ Form 组件基于  async-validator 实现的数据验证，给 Form 设置属性
                     desc: ''
                 },
                 ruleValidate: {
+                    age:[
+                      { type:'number', trigger: 'blur' }
+                    ],
                     name: [
                         { required: true, message: 'The name cannot be empty', trigger: 'blur' }
                     ],

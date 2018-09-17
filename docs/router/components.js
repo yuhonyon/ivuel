@@ -133,13 +133,6 @@ export default {
             path:'tag'
         },{
             name:{
-                'zh':'Carousel',
-                'en':'Carousel'
-            },
-            icon:'ios-star',
-            path:'carousel'
-        },{
-            name:{
                 'zh':'Tree',
                 'en':'Tree'
             },
@@ -171,13 +164,6 @@ export default {
             path:'alert'
         },{
             name:{
-                'zh':'Badge',
-                'en':'Badge'
-            },
-            icon:'ios-star',
-            path:'badge'
-        },{
-            name:{
                 'zh':'Breadcrumb',
                 'en':'Breadcrumb'
             },
@@ -197,16 +183,7 @@ export default {
             },
             icon:'ios-star',
             path:'circle'
-        },
-        {
-            name:{
-                'zh':'Avatar',
-                'en':'Avatar'
-            },
-            icon:'ios-star',
-            path:'avatar'
         }
-
     ],
     form:[
         {
@@ -259,14 +236,6 @@ export default {
         },
         {
             name:{
-                'zh':'Cascader',
-                'en':'Cascader'
-            },
-            icon:'ios-star',
-            path:'cascader'
-        },
-        {
-            name:{
                 'zh':'DatePicker',
                 'en':'DatePicker'
             },
@@ -303,13 +272,6 @@ export default {
             },
             icon:'ios-star',
             path:'form'
-        },{
-            name:{
-                'zh':'AutoComplete',
-                'en':'AutoComplete'
-            },
-            icon:'ios-star',
-            path:'auto-complete'
         },{
             name:{
                 'zh':'Slider',

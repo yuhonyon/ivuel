@@ -51,8 +51,8 @@ module.exports = {
           },{
             loader: 'ivuel-loader',
             options: {
-                        prefix: false
-                    }
+                prefix: false
+            }
           }
         ]
       },
@@ -64,8 +64,14 @@ module.exports = {
             options: vueLoaderConfig
           },
           {
+            loader: 'ivuel-loader',
+            options: {
+                prefix: false
+            }
+          },
+          {
             loader: 'ivue-doc-loader',
-            options:{aaa:1111}
+            options:{customTheme:1111}
           }
         ]
       },

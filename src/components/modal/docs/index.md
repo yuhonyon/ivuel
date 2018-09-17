@@ -79,6 +79,14 @@ order: 1
 | closable |是否可以按 Esc 键关闭 |Boolean |false |
 | onOk |点击确定的回调 |Function |- |
 | onCancel |点击取消的回调，只在Modal.confirm()下有效 |Function |- |
+| extraBtn |添加按钮 |Array |- |
 
+#### extraBtn
+
+| 属性 | 说明 | 类型 | 默认值 |
+| ---- | ---- | ---- | ------ |
+| name |   按钮文字   |  String    |   -     |
+| type |   按钮类型   |    String  | primary       |
+| onOk     |  点击回调    |   Function   |   -     |
 
 # en-US

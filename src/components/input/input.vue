@@ -214,7 +214,15 @@
             },
             handleInput (event) {
                 let value = event.target.value;
-                if (this.number) value = Number.isNaN(Number(value)) ? value : Number(value);
+
+                if (this.number) {
+                  if(value===''){
+                    value=null
+                  }else{
+                    value = Number.isNaN(Number(value)) ? value : Number(value);
+                  }
+
+                }
                 this.$emit('input', value);
                 this.setCurrentValue(value);
                 this.$emit('on-change', event);

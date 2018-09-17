@@ -52,14 +52,17 @@
               type="button"
               @click="prevYear"
               :aria-label="t(`i.datepicker.prevYear`)"
-              class="ivu-picker-panel__icon-btn ivu-date-picker__prev-btn ivu-icon ivu-icon-ios-arrow-left">
+              class="ivu-picker-panel__icon-btn ivu-date-picker__prev-btn">
+              <i class="ivu-icon ivu-icon-ios-arrow-left"></i><i class="ivu-icon ivu-icon-ios-arrow-left"></i>
             </button>
             <button
               type="button"
               @click="prevMonth"
               v-show="currentView === 'date'"
               :aria-label="t(`i.datepicker.prevMonth`)"
-              class="ivu-picker-panel__icon-btn ivu-date-picker__prev-btn ivu-icon ivu-icon-ios-arrow-left">
+              class="ivu-picker-panel__icon-btn ivu-date-picker__prev-btn">
+              &nbsp;
+              <i class="ivu-icon ivu-icon-ios-arrow-left"></i>
             </button>
             <span
               @click="showYearPicker"
@@ -75,14 +78,18 @@
               type="button"
               @click="nextYear"
               :aria-label="t(`i.datepicker.nextYear`)"
-              class="ivu-picker-panel__icon-btn ivu-date-picker__next-btn ivu-icon ivu-icon-ios-arrow-right">
+              class="ivu-picker-panel__icon-btn ivu-date-picker__next-btn">
+              <i class="ivu-icon ivu-icon-ios-arrow-right"></i><i class="ivu-icon ivu-icon-ios-arrow-right"></i>
             </button>
+
             <button
               type="button"
               @click="nextMonth"
               v-show="currentView === 'date'"
               :aria-label="t(`i.datepicker.nextMonth`)"
-              class="ivu-picker-panel__icon-btn ivu-date-picker__next-btn ivu-icon ivu-icon-ios-arrow-right">
+              class="ivu-picker-panel__icon-btn ivu-date-picker__next-btn">
+              <i class="ivu-icon ivu-icon-ios-arrow-right"></i>
+              &nbsp;
             </button>
           </div>
 
