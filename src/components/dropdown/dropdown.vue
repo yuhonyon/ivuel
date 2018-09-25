@@ -31,6 +31,10 @@
         directives: { clickOutside, TransferDom },
         components: { Drop },
         props: {
+            disabled: {
+                type: Boolean,
+                default: false
+            },
             trigger: {
                 validator (value) {
                     return oneOf(value, ['click', 'hover', 'custom']);
@@ -83,14 +87,14 @@
         },
         methods: {
             handleClick () {
-                if (this.trigger === 'custom') return false;
+                if (this.trigger === 'custom'||this.disabled) return false;
                 if (this.trigger !== 'click') {
                     return false;
                 }
                 this.currentVisible = !this.currentVisible;
             },
             handleMouseenter () {
-                if (this.trigger === 'custom') return false;
+                if (this.trigger === 'custom'||this.disabled) return false;
                 if (this.trigger !== 'hover') {
                     return false;
                 }

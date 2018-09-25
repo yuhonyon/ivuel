@@ -1,6 +1,6 @@
 {
   "name": "ivuel",
-  "version": "2.0.13",
+  "version": "2.0.17",
   "description": "A Vue.js project",
   "author": "yufangyang <975057282@qq.com>",
   "main": "dist/ivuel.min.js",
@@ -9,11 +9,11 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
+    "start": "cross-env NODE_ENV=development npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
-    "build": "node build/build.js",
+    "build": "cross-env NODE_ENV=production node build/build.js",
     "style": "gulp --gulpfile build/gulpfile.js",
     "dist": "node build/dist.js&& npm run style",
     "prepublish": "npm run dist"

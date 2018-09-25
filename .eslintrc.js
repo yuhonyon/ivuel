@@ -25,7 +25,7 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 0 : 0,
     "indent": ["error", 4, { "SwitchCase": 1 }],
     "quotes": ["error", "single"],
     "semi": ["error", "always"],

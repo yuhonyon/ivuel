@@ -23,7 +23,8 @@ Modal.newInstance = properties => {
             buttonLoading: false,
             scrollable: false,
             closable: false,
-            extraBtn:null
+            extraBtn:null,
+            extraBtnLoading:{}
         }),
         render (h) {
             let footerVNodes = [];
@@ -40,21 +41,27 @@ Modal.newInstance = properties => {
             }
             if(this.extraBtn){
                 this.extraBtn.forEach(btn=>{
+
                     footerVNodes.push(h(Button, {
                         props: {
                             type: btn.type||'primary',
                             size: 'large',
-                            loading: this.buttonLoading
+                            loading: this.extraBtnLoading[btn.name]||false
                         },
                         on: {
                             click: ()=>{
+                                let async=btn.onOk();
+                                if(async===false){
+                                    this.$set(this.extraBtnLoading,btn.name,false);
+                                    return;
+                                }
                                 if (this.loading) {
-                                    this.buttonLoading = true;
+                                    this.$set(this.extraBtnLoading,btn.name,true);
                                 } else {
                                     this.$children[0].visible = false;
                                     this.remove();
                                 }
-                                btn.onOk();
+
                             }
                         }
                     }, btn.name));
@@ -175,19 +182,27 @@ Modal.newInstance = properties => {
         },
         methods: {
             cancel () {
+                let async=this.onCancel();
+                if(async===false){
+                    this.buttonLoading = false;
+                    return;
+                }
                 this.$children[0].visible = false;
                 this.buttonLoading = false;
-                this.onCancel();
                 this.remove();
             },
             ok () {
+                let async=this.onOk();
+                if(async===false){
+                    this.buttonLoading = false;
+                    return;
+                }
                 if (this.loading) {
                     this.buttonLoading = true;
                 } else {
                     this.$children[0].visible = false;
                     this.remove();
                 }
-                this.onOk();
             },
             remove () {
                 setTimeout(() => {

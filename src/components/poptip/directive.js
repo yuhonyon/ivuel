@@ -4,6 +4,9 @@ const getReference = (el, binding, vnode) => {
     if (popper) {
         if (Array.isArray(popper)) {
             popper=popper[0];
+            if(!popper){
+                return;
+            }
         }
         let parentNode=popper.$refs.reference.parentNode;
         if(popper.transfer){

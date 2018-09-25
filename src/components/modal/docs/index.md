@@ -77,7 +77,7 @@ order: 1
 | loading |点击确定按钮时，确定按钮是否显示 loading 状态，开启则需手动调用Modal.remove()来关闭对话框 |Boolean |false |
 | scrollable |页面是否可以滚动 |Boolean |false |
 | closable |是否可以按 Esc 键关闭 |Boolean |false |
-| onOk |点击确定的回调 |Function |- |
+| onOk |点击确定的回调, `return false` 可以阻止弹窗关闭 |Function |- |
 | onCancel |点击取消的回调，只在Modal.confirm()下有效 |Function |- |
 | extraBtn |添加按钮 |Array |- |
 

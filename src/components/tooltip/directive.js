@@ -3,6 +3,9 @@ const getReference = (el, binding, vnode) => {
     const popper = vnode.context.$refs[_ref];
     if (popper) {
         if (Array.isArray(popper)) {
+            if(!popper[0]){
+                return;
+            }
             popper[0].$refs.reference = el;
         } else {
             popper.$refs.reference = el;

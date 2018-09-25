@@ -22,6 +22,8 @@ desc:
 | visible |手动控制下拉框的显示，在 trigger = 'custom' 时使用 |Boolean |false |
 | placement |下拉菜单出现的位置，可选值为toptop-starttop-endbottombottom-startbottom-endleftleft-startleft-endrightright-startright-end, 2.12.0 版本开始支持自动识别 |String |bottom |
 | transfer |是否将弹层放置于 body 内，在 Tabs、带有 fixed 的 Table 列内使用时，建议添加此属性，它将不受父级样式影响，从而达到更好的效果 |Boolean |false |
+| disabled |禁用 |Boolean |false |
+
 
 ### Dropdown events
 

@@ -22,9 +22,9 @@ order: 1
 
 ```vue
 <template>
-    <Dropdown>
+    <Dropdown disabled>
         <a href="javascript:void(0)">
-            下拉菜单
+            禁用下拉菜单
             <Icon type="arrow-down-b"></Icon>
         </a>
         <DropdownMenu slot="list">

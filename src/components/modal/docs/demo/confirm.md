@@ -20,6 +20,7 @@ order: 55
     <Button @click="confirm">Normal</Button>
     <Button @click="custom">Custom button text</Button>
     <Button @click="async">Asynchronous closing</Button>
+    <Button @click="cancle">cancel closing</Button>
 </template>
 <script>
     export default {
@@ -57,6 +58,21 @@ order: 55
                         }, 2000);
                     }
                 });
+            },
+            cancle(){
+              this.$Modal.confirm({
+                  title: 'Title',
+                  content: '<p>Content of dialog</p><p>Content of dialog</p>',
+                  onOk: () => {
+                      this.$Message.info('cancel');
+                      return false;
+                  },
+                  loading:true,
+                  extraBtn:[{name:"按钮2",onOk:()=>{}}],
+                  onCancel: () => {
+                      this.$Message.info('Clicked cancel');
+                  }
+              });
             }
         }
     }
