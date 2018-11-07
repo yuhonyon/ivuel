@@ -239,6 +239,7 @@
                 }
             },
             onFieldBlur() {
+                this.dispatch('iForm', 'on-form-change', this.prop);
                 this.validate('blur');
             },
             onFieldChange() {
@@ -246,7 +247,6 @@
                     this.validateDisabled = false;
                     return;
                 }
-
                 this.validate('change');
             }
         },

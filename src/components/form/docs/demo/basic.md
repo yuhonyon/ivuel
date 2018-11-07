@@ -18,7 +18,7 @@ order: 1
 
 ```vue
 <template>
-    <Form ref="formInline" :model="formInline" :rules="ruleInline" inline>
+    <Form @on-change="aaa" ref="formInline" :model="formInline" :rules="ruleInline" inline>
         <FormItem prop="user">
             <Input type="text" v-model="formInline.user" placeholder="Username">
                 <Icon type="ios-person-outline" slot="prepend"></Icon>
@@ -54,6 +54,9 @@ order: 1
             }
         },
         methods: {
+          aaa(e){
+            console.log(e,999)
+          },
             handleSubmit(name) {
                 this.$refs[name].validate((valid) => {
                     if (valid) {

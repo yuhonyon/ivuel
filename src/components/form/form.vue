@@ -142,6 +142,9 @@
                 if (field.prop) this.fields.splice(this.fields.indexOf(field), 1);
                 return false;
             });
+            this.$on('on-form-change', (field) => {
+                this.$emit('on-change',field)
+            });
         }
     };
 </script>
