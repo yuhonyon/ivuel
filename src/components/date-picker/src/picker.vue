@@ -379,7 +379,7 @@ export default {
         if (this.userInput && parsedValue && this.isValidValue(parsedValue)) {
           this.userInput = null;
         }
-        this.dispatch('ElFormItem', 'el.form.blur');
+        this.dispatch('iForm', 'on-form-blur');
         this.$emit('blur', this);
         this.blur();
       }
@@ -904,7 +904,7 @@ export default {
       // determine user real change only
       if (val !== this.valueOnOpen) {
         this.$emit('change', val);
-        this.dispatch('ElFormItem', 'el.form.change', val);
+        this.dispatch('iForm', 'on-form-change', val);
         this.valueOnOpen = val;
       }
     },

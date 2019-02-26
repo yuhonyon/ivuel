@@ -29,6 +29,9 @@ order: 1
                 <Icon type="ios-locked-outline" slot="prepend"></Icon>
             </Input>
         </FormItem>
+        <FormItem prop="aaa">
+            <DatePicker v-model="aaaa"></DatePicker>
+        </FormItem>
         <FormItem>
             <Button type="primary" @click="handleSubmit('formInline')">Signin</Button>
         </FormItem>
@@ -38,6 +41,7 @@ order: 1
     export default {
         data () {
             return {
+              aaaa:new Date(),
                 formInline: {
                     user: '',
                     password: ''

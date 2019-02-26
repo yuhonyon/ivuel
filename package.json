@@ -1,6 +1,6 @@
 {
   "name": "ivuel",
-  "version": "2.0.19",
+  "version": "2.0.20",
   "description": "A Vue.js project",
   "author": "yufangyang <975057282@qq.com>",
   "main": "dist/ivuel.min.js",
